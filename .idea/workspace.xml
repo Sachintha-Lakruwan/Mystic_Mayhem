@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="initial files">
-      <change afterPath="$PROJECT_DIR$/src/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Shop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TroopsData.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
-    </list>
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Main file completed" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -61,7 +53,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1709834368858</updated>
-      <workItem from="1709834370018" duration="9740000" />
+      <workItem from="1709834370018" duration="10058000" />
     </task>
     <task id="LOCAL-00001" summary="initial files">
       <option name="closed" value="true" />
@@ -71,7 +63,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709835027584</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Main file completed">
+      <option name="closed" value="true" />
+      <created>1709869152799</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709869152799</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +90,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial files" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial files" />
+    <MESSAGE value="Main file completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Main file completed" />
   </component>
 </project>
