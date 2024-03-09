@@ -18,6 +18,6 @@ public class Main {
 
         whiteWolf.buyEquipment("Knight", "Chainmail");
         System.out.println(whiteWolf.army.knight.attack);
-        System.out.println("Start Game");
+
     }
 }
