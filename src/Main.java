@@ -1,26 +1,20 @@
 public class Main {
     public static void main(String[] args) {
-        /*
 
-        Game game = new Game();
+        //initialize the existing player and his army
+        Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
+        String[] troops = {"Ranger", "Squire", "Warlock", "Medic", "Dragon"};
+        whiteWolf.createArmy(troops);
+        whiteWolf.army.archer.setEquipment("Chainmail");
+        whiteWolf.army.healer.setEquipment("Amulet");
 
-        String[] army = {"Ranger", "Squire", "Warlock", "Medic", "Dragon"};
-        String[] equipment = {"Chainmail", null, null, "Amulet" , null};
-        Player whitewolf = game.existingPlayer("GeraltofRivia", "whitewolf", 32, 215, "Marshland", army, equipment)
+        //register new player
+        Player jacob = new Player("Jacob Lara", "jacob");
 
-        Player jacob = game.newPlayer("Jacob Lara", "jacob")
+        //now, two players are created successfully. one of them is whitewolf and his army is already created.
+        // other one is Jacob, who was created by the user, and his army is yet to be created
 
-        jacob.buy("Archers", "Shooter");
-        jacob.buy("Knights", "Squire");
-        jacob.buy("Mages", "Warlock");
-        jacob.buy("Healers", "Soother");
-        jacob.buy("MythicalCreatures", "Dragon");
-
-        jacob.sell("Archers");
-        jacob.buy("Archers", "Ranger");
-
-        game.challenge(alice, jason);
-
-        */
+        whiteWolf.buyEquipment("Knight", "Chainmail");
+        System.out.println(whiteWolf.army.knight.equipment.attack);
     }
 }
