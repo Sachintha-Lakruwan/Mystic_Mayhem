@@ -1,0 +1,54 @@
+{
+  "Armors": [
+    {
+      "Name": "Chainmail",
+      "Price": 70,
+      "Attack": 0,
+      "Defence": 1,
+      "Health": 0,
+      "Speed": -1
+    },
+    {
+      "Name": "Excalibur",
+      "Price": 150,
+      "Attack": 2,
+      "Defence": 0,
+      "Health": 0,
+      "Speed": 0
+    },
+    {
+      "Name": "Regalia",
+      "Price": 105,
+      "Attack": 0,
+      "Defence": 1,
+      "Health": 0,
+      "Speed": 0
+    }
+  ],
+  "Artifacts": [
+    {
+      "Name": "Amulet",
+      "Price": 200,
+      "Attack": 1,
+      "Defence": -1,
+      "Health": 1,
+      "Speed": 1
+    },
+    {
+      "Name": "Fleece",
+      "Price": 150,
+      "Attack": 0,
+      "Defence": 2,
+      "Health": 1,
+      "Speed": -1
+    },
+    {
+      "Name": "Crystal",
+      "Price": 210,
+      "Attack": 2,
+      "Defence": 1,
+      "Health": -1,
+      "Speed": -1
+    }
+  ]
+}
