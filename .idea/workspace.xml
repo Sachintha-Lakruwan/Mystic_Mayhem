@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Main file completed">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Army.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Equipment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Soldier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Shop.java" beforeDir="false" />
-    </list>
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="First stage is done!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -81,7 +71,7 @@
       <updated>1709834368858</updated>
       <workItem from="1709834370018" duration="10143000" />
       <workItem from="1709924251040" duration="4059000" />
-      <workItem from="1709962224092" duration="10058000" />
+      <workItem from="1709962224092" duration="10208000" />
     </task>
     <task id="LOCAL-00001" summary="initial files">
       <option name="closed" value="true" />
@@ -107,7 +97,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709869357107</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="First stage is done!">
+      <option name="closed" value="true" />
+      <created>1709972860199</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709972860199</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -127,6 +125,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial files" />
     <MESSAGE value="Main file completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Main file completed" />
+    <MESSAGE value="First stage is done!" />
+    <option name="LAST_COMMIT_MESSAGE" value="First stage is done!" />
   </component>
 </project>
