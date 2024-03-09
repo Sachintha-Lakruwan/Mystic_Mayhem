@@ -14,7 +14,9 @@ public class Main {
         //now, two players are created successfully. one of them is whitewolf and his army is already created.
         // other one is Jacob, who was created by the user, and his army is yet to be created
 
+
+
         whiteWolf.buyEquipment("Knight", "Chainmail");
-        System.out.println(whiteWolf.army.knight.equipment.attack);
+        System.out.println(whiteWolf.army.knight.attack);
     }
 }

@@ -11,6 +11,7 @@ public class Equipment {
         this.name = name;
 
         //get data from json file
+        //hasitha
         this.price = 100;
         this.attack = 10;
         this.defence = 0;

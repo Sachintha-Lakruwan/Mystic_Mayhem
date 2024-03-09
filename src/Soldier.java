@@ -8,11 +8,12 @@ public class Soldier {
     int speed;
     Equipment equipment;
 
-    public Soldier(String name) {
+    public Soldier(String name, String category) {
         this.name = name;
         this.equipment = null;
 
         //get data from json file
+        //hasitha
         this.price = 100;
         this.attack = 10;
         this.defence = 5;
