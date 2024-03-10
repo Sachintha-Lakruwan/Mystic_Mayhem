@@ -1,3 +1,6 @@
+import java.util.List;
+import java.util.Objects;
+
 public class Equipment {
 
     String name;
@@ -6,16 +9,22 @@ public class Equipment {
     int defence;
     int health;
     int speed;
+    static  DataBase database = new DataBase();
 
     public Equipment(String name) {
-        this.name = name;
 
-        //get data from json file
-        //hasitha
-        this.price = 100;
-        this.attack = 10;
-        this.defence = 0;
-        this.health = 0;
-        this.speed = 9;
+        List<Object> EquipmentsoldierData = database.getEquipmentSoldierData(name);
+
+        // Check if soldier data is found
+        if (EquipmentsoldierData != null) {
+            this.name = (String) EquipmentsoldierData.get(0);
+            this.price = (int) EquipmentsoldierData.get(1);
+            this.attack = (int) EquipmentsoldierData.get(2);
+            this.defence = (int) EquipmentsoldierData.get(3);
+            this.health = (int) EquipmentsoldierData.get(4);
+            this.speed = (int) EquipmentsoldierData.get(5);
+        }
     }
+
+
 }
