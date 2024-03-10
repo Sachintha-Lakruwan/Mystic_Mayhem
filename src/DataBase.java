@@ -48,33 +48,31 @@ public class DataBase {
 
 
     // Method to get soldier data by name
-    public List<Object> getEquipmentSoldierData(String name) {
+    public int[] getEquipmentData(String name) {
         for (List<Object> soldier : equipmentList) {
             if (name.equals(soldier.get(0))) {
-                /*System.out.println("Name: " + soldier.get(0));
-                System.out.println("Price: " + soldier.get(1));
-                System.out.println("Attack: " + soldier.get(2));
-                System.out.println("Defence: " + soldier.get(3));
-                System.out.println("Health: " + soldier.get(4));
-                System.out.println("Speed: " + soldier.get(5));*/
-
-                return soldier;
+                int price = (int) soldier.get(1);
+                int attack = (int) soldier.get(2);
+                int defence = (int) soldier.get(3);
+                int health = (int) soldier.get(4);
+                int speed = (int) soldier.get(5);
+                int[] data = {price, attack, defence, health, speed};
+                return data;
             }
         }
         return null; // Return null if no match found
     }
-    public List<Object> getSoldierData(String name) {
+    public int[] getSoldierData(String name) {
         for (List<Object> soldier : soldiersData) {
 
             if (name.equals(soldier.get(0))) {
-               /* System.out.println("Name: " + soldier.get(0));
-                System.out.println("Price: " + soldier.get(1));
-                System.out.println("Attack: " + soldier.get(2));
-                System.out.println("Defence: " + soldier.get(3));
-                System.out.println("Health: " + soldier.get(4));
-                System.out.println("Speed: " + soldier.get(5));*/
-
-                return soldier;
+                int price = (int) soldier.get(1);
+                int attack = (int) soldier.get(2);
+                int defence = (int) soldier.get(3);
+                int health = (int) soldier.get(4);
+                int speed = (int) soldier.get(5);
+                int[] data = {price, attack, defence, health, speed};
+                return data;
             }
         }
         return null; // Return null if no match found
