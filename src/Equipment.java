@@ -9,24 +9,22 @@ public class Equipment {
     int defence;
     int health;
     int speed;
+    static  DataBase database = new DataBase();
 
     public Equipment(String name) {
-        DataBase database = new DataBase();
-        List<Object> soldierData = database.getSoldierData(name);
+
+        List<Object> EquipmentsoldierData = database.getEquipmentSoldierData(name);
 
         // Check if soldier data is found
-        if (soldierData != null) {
-            this.name = (String) soldierData.get(0);
-            this.price = (int) soldierData.get(1);
-            this.attack = (int) soldierData.get(2);
-            this.defence = (int) soldierData.get(3);
-            this.health = (int) soldierData.get(4);
-            this.speed = (int) soldierData.get(5);
+        if (EquipmentsoldierData != null) {
+            this.name = (String) EquipmentsoldierData.get(0);
+            this.price = (int) EquipmentsoldierData.get(1);
+            this.attack = (int) EquipmentsoldierData.get(2);
+            this.defence = (int) EquipmentsoldierData.get(3);
+            this.health = (int) EquipmentsoldierData.get(4);
+            this.speed = (int) EquipmentsoldierData.get(5);
         }
     }
 
 
 }
-
-
-
