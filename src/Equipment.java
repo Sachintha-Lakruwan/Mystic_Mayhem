@@ -1,6 +1,3 @@
-import java.util.List;
-import java.util.Objects;
-
 public class Equipment {
 
     String name;
@@ -13,18 +10,16 @@ public class Equipment {
 
     public Equipment(String name) {
 
-        List<Object> EquipmentsoldierData = database.getEquipmentSoldierData(name);
+        int[] EquipmentData = database.getEquipmentData(name);
 
         // Check if soldier data is found
-        if (EquipmentsoldierData != null) {
-            this.name = (String) EquipmentsoldierData.get(0);
-            this.price = (int) EquipmentsoldierData.get(1);
-            this.attack = (int) EquipmentsoldierData.get(2);
-            this.defence = (int) EquipmentsoldierData.get(3);
-            this.health = (int) EquipmentsoldierData.get(4);
-            this.speed = (int) EquipmentsoldierData.get(5);
+        if (EquipmentData != null) {
+            this.name = name;
+            this.price = EquipmentData[0];
+            this.attack = EquipmentData[1];
+            this.defence = EquipmentData[2];
+            this.health = EquipmentData[3];
+            this.speed = EquipmentData[4];
         }
     }
-
-
 }

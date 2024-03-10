@@ -1,5 +1,3 @@
-import java.util.List;
-
 public class Soldier {
 
     String name;
@@ -12,23 +10,23 @@ public class Soldier {
     private static final DataBase database = new DataBase();
 
     public Soldier(String name, String category) {
-        List<Object> soldierData=database.getSoldierData(name);
+        int[] soldierData=database.getSoldierData(name);
 
         this.equipment = null;
 
 
         if (soldierData != null) {
-            this.name = (String) soldierData.get(0);
-            this.price = (int) soldierData.get(1);
-            this.attack = (int) soldierData.get(2);
-            this.defence = (int) soldierData.get(3);
-            this.health = (int) soldierData.get(4);
-            this.speed = (int) soldierData.get(5);
+            this.name = name;
+            this.price = soldierData[0];
+            this.attack = soldierData[1];
+            this.defence = soldierData[2];
+            this.health = soldierData[3];
+            this.speed = soldierData[4];
         }
     }
 
     public void setEquipment(String equipmentName){
-        Equipment equipment = new Equipment(equipmentName);
+        this.equipment = new Equipment(equipmentName);
 
     }
 
