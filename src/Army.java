@@ -10,11 +10,11 @@ public class Army {
     Soldier mythical;
 
     public Army(String[] troops) {
-        this.archer = new Soldier(troops[0], "Archer");
-        this.knight = new Soldier(troops[1], "Knight");
-        this.mage = new Soldier(troops[2], "Mages");
-        this.healer = new Soldier(troops[3], "Healer");
-        this.mythical = new Soldier(troops[4], "Mythical");
+        this.archer = new Soldier("Archer", troops[0]);
+        this.knight = new Soldier("Knight", troops[1]);
+        this.mage = new Soldier("Mage", troops[2]);
+        this.healer = new Soldier("Healer", troops[3]);
+        this.mythical = new Soldier("MythicalCreature", troops[4]);
     }
 
     public Army() {

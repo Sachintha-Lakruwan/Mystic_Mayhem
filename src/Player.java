@@ -84,7 +84,8 @@ public class Player {
                 army = new Army(); // Initialize the army if it's not already initialized
             }
 
-            this.army.archer = new Soldier(name, "Archer");
+            // this.army.archer = new Soldier("Archer", name);
+            this.army.archer = Obj1;
         }
 
     }
