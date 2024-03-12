@@ -18,7 +18,12 @@ public class Main {
         // created
 
         whiteWolf.buyEquipment("Knight", "Chainmail");
-        System.out.println(whiteWolf.army.knight.attack);
+
+        jacob.buyArcher("Shooter");
+        System.out.println(jacob.army.archer.attack);
+        
+        // jacob.buyEquipment("Archer", "Shooter");
+        System.out.println(jacob.army.archer.attack);
 
     }
 }
