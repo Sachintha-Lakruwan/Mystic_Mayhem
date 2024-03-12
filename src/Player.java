@@ -36,9 +36,7 @@ public class Player {
     }
 
     public Player(String name, String username) {
-        // this.players = new ArrayList<>();
 
-        // this.gold = 500;
         if (isUsernameTaken(username)) {
             System.out.println("Username '" + username + "' is already taken. Please choose another username.");
             // Handle the case where the username already exists, you can throw an exception
@@ -95,6 +93,22 @@ public class Player {
 
     }
 
+    public void sellArcher() {
+        if (army != null && army.archer != null) { // Check if the player has an Archer
+            int sellValue = (int) (army.archer.price * 0.9); // Calculate sell value (90% of the price)
+
+            // Add the sell value to the player's gold
+            this.gold += sellValue;
+
+            // Remove the Archer from the player's army
+            this.army.archer = null;
+
+            System.out.println("Archer sold successfully for " + sellValue + " gold.");
+        } else {
+            System.out.println("You don't have an Archer to sell.");
+        }
+    }
+
     public void buyKnight(String name) {
         Soldier Obj2 = new Soldier("Knight", name);
 
@@ -109,6 +123,17 @@ public class Player {
             }
 
             this.army.knight = new Soldier(name, "Knight");
+        }
+    }
+
+    public void sellKnight() {
+        if (army != null && army.knight != null) {
+            int sellValue = (int) (army.knight.price * 0.9);
+            this.gold += sellValue;
+            this.army.knight = null;
+            System.out.println("Knight sold successfully for " + sellValue + " gold.");
+        } else {
+            System.out.println("You don't have a Knight to sell.");
         }
     }
 
@@ -129,6 +154,17 @@ public class Player {
         }
     }
 
+    public void sellMage() {
+        if (army != null && army.mage != null) {
+            int sellValue = (int) (army.mage.price * 0.9);
+            this.gold += sellValue;
+            this.army.mage = null;
+            System.out.println("Mage sold successfully for " + sellValue + " gold.");
+        } else {
+            System.out.println("You don't have a Mage to sell.");
+        }
+    }
+
     public void buyHealer(String name) {
         Soldier Obj4 = new Soldier("Knight", name);
 
@@ -143,6 +179,17 @@ public class Player {
             }
 
             this.army.healer = new Soldier(name, "Healer");
+        }
+    }
+
+    public void sellHealer() {
+        if (army != null && army.healer != null) {
+            int sellValue = (int) (army.healer.price * 0.9);
+            this.gold += sellValue;
+            this.army.healer = null;
+            System.out.println("Healer sold successfully for " + sellValue + " gold.");
+        } else {
+            System.out.println("You don't have a Healer to sell.");
         }
     }
 
@@ -162,6 +209,18 @@ public class Player {
             this.army.mythical = new Soldier(name, "MythicalCreature");
         }
     }
+
+    public void sellMythicalCreature() {
+        if (army != null && army.mythical != null) {
+            int sellValue = (int) (army.mythical.price * 0.9);
+            this.gold += sellValue;
+            this.army.mythical = null;
+            System.out.println("MythicalCreature sold successfully for " + sellValue + " gold.");
+        } else {
+            System.out.println("You don't have a MythicalCreature to sell.");
+        }
+    }
+
     // make this kind of methods for all the troops. make methods for sell troops
     // also. so there should be 10 methods in total
 
