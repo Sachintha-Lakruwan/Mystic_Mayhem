@@ -1,31 +1,73 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Player {
-    String name;
-    String username;
-    int id;
-    int gold;
-    int xp;
-    Army army;
+    protected String name;
+    protected String username;
+    protected int id;
+    protected int gold;
+    protected int xp;
+    protected int i = 0;
+
+    // protected HomeGround homeGround;
+    protected Army army;
+
     static DataBase db = new DataBase();
+    static List<String> players = new ArrayList<>();
+
+    // static String players[] = { null, null };
+    private static int nextId = 1;
+
     // global variable to store usernames
+    public boolean isUsernameTaken(String username) {
+        for (String player : players) {
+            if (player == username) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public void addUsername(String username) {
+        players.add(username);
+    }
+
+    public int generateUniqueId() {
+        return nextId++;
+    }
 
     public Player(String name, String username) {
-        this.name = name;
-        // check if the username exists
-        this.username = username;
-        // if user exists return null
-        // print the error
+        // this.players = new ArrayList<>();
 
-        this.gold = 500;
+        // this.gold = 500;
+        if (isUsernameTaken(username)) {
+            System.out.println("Username '" + username + "' is already taken. Please choose another username.");
+            // Handle the case where the username already exists, you can throw an exception
+            // or handle it accordingly.
+        } else {
+            this.username = username;
+            this.id = generateUniqueId();
+            this.gold = 500;
+            this.xp = 0;
+            addUsername(username); // Add the player to the system
+        }
 
     }
 
     public Player(String name, String username, int gold, int xp) {
-        this.name = name;
-        this.username = username;
-        this.gold = gold;
-        this.xp = xp;
+        // this.players = new ArrayList<>();
+
+        if (isUsernameTaken(username)) {
+            System.out.println("Username '" + username + "' is already taken. Please choose another username.");
+
+        } else {
+            this.username = username;
+            this.id = generateUniqueId();
+            this.gold = 500;
+            this.xp = 0;
+            addUsername(username); // Add the player to the system
+        }
     }
 
     public void createArmy(String[] troops) {

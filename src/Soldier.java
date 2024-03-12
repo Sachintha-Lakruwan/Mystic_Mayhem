@@ -10,10 +10,9 @@ public class Soldier {
     private static final DataBase database = new DataBase();
 
     public Soldier(String name, String category) {
-        int[] soldierData=database.getSoldierData(name);
+        int[] soldierData = database.getSoldierData(name);
 
         this.equipment = null;
-
 
         if (soldierData != null) {
             this.name = name;
@@ -25,10 +24,9 @@ public class Soldier {
         }
     }
 
-    public void setEquipment(String equipmentName){
+    public void setEquipment(String equipmentName) {
         this.equipment = new Equipment(equipmentName);
 
     }
-
 
 }

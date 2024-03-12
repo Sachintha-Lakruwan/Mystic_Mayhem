@@ -6,7 +6,7 @@ public class Equipment {
     int defence;
     int health;
     int speed;
-    static  DataBase database = new DataBase();
+    static DataBase database = new DataBase();
 
     public Equipment(String name) {
 
