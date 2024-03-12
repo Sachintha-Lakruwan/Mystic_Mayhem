@@ -20,10 +20,10 @@ public class Main {
         whiteWolf.buyEquipment("Knight", "Chainmail");
 
         jacob.buyArcher("Shooter");
-        System.out.println(jacob.army.archer.attack);
-        
-        // jacob.buyEquipment("Archer", "Shooter");
-        System.out.println(jacob.army.archer.attack);
+        System.out.println(jacob.army.archer.defence);
+
+        jacob.buyEquipment("Archer", "Chainmail");
+        System.out.println(jacob.army.archer.defence);
 
     }
 }

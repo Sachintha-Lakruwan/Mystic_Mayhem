@@ -233,7 +233,7 @@ public class Player {
                 this.army.archer.attack += data[1];
                 this.army.archer.defence += data[2];
                 this.army.archer.health += data[3];
-                this.army.archer.spee += data[4];
+                this.army.archer.speed += data[4];
 
             }
 
@@ -244,7 +244,7 @@ public class Player {
                 this.army.knight.attack += data[1];
                 this.army.knight.defence += data[2];
                 this.army.knight.health += data[3];
-                this.army.knight.spee += data[4];
+                this.army.knight.speed += data[4];
             }
 
             if (soldier == "Mage") {
@@ -254,7 +254,7 @@ public class Player {
                 this.army.mage.attack += data[1];
                 this.army.mage.defence += data[2];
                 this.army.mage.health += data[3];
-                this.army.mage.spee += data[4];
+                this.army.mage.speed += data[4];
             }
 
             if (soldier == "Healer") {
@@ -264,7 +264,7 @@ public class Player {
                 this.army.healer.attack += data[1];
                 this.army.healer.defence += data[2];
                 this.army.healer.health += data[3];
-                this.army.healer.spee += data[4];
+                this.army.healer.speed += data[4];
             }
 
             if (soldier == "Mythical") {
@@ -274,7 +274,7 @@ public class Player {
                 this.army.mythical.attack += data[1];
                 this.army.mythical.defence += data[2];
                 this.army.mythical.health += data[3];
-                this.army.mythical.spee += data[4];
+                this.army.mythical.speed += data[4];
             }
         }
     }
