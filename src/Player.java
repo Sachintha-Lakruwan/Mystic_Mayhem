@@ -73,10 +73,6 @@ public class Player {
     public void buyArcher(String name) {
         Soldier Obj1 = new Soldier("Archer", name);
 
-        // check if the gold is enough for the purchase
-        // if not print a error message
-        // else reduce the gold
-
         if (gold < Obj1.price) {
             System.out.println("Insufficient gold to buy an Archer.");
             return; // Exit the method if there's not enough gold
@@ -221,16 +217,6 @@ public class Player {
         }
     }
 
-    // make this kind of methods for all the troops. make methods for sell troops
-    // also. so there should be 10 methods in total
-
-    /*
-     * complete other 9 methods here
-     * 
-     * 
-     * 
-     */
-
     // whitewolf.buyEquipment("knight", "name")
     public void buyEquipment(String soldier, String equipment) {
         int[] data = db.getEquipmentData(equipment);
@@ -243,30 +229,53 @@ public class Player {
             if (soldier == "Archer") {
 
                 this.army.archer.setEquipment(equipment);
+                this.army.archer.price += data[0];
+                this.army.archer.attack += data[1];
+                this.army.archer.defence += data[2];
+                this.army.archer.health += data[3];
+                this.army.archer.speed += data[4];
+
             }
 
             if (soldier == "Knight") {
 
                 this.army.knight.setEquipment(equipment);
+                this.army.knight.price += data[0];
+                this.army.knight.attack += data[1];
+                this.army.knight.defence += data[2];
+                this.army.knight.health += data[3];
+                this.army.knight.speed += data[4];
             }
 
             if (soldier == "Mage") {
 
                 this.army.mage.setEquipment(equipment);
+                this.army.mage.price += data[0];
+                this.army.mage.attack += data[1];
+                this.army.mage.defence += data[2];
+                this.army.mage.health += data[3];
+                this.army.mage.speed += data[4];
             }
 
             if (soldier == "Healer") {
 
                 this.army.healer.setEquipment(equipment);
+                this.army.healer.price += data[0];
+                this.army.healer.attack += data[1];
+                this.army.healer.defence += data[2];
+                this.army.healer.health += data[3];
+                this.army.healer.speed += data[4];
             }
 
             if (soldier == "Mythical") {
 
                 this.army.mythical.setEquipment(equipment);
+                this.army.mythical.price += data[0];
+                this.army.mythical.attack += data[1];
+                this.army.mythical.defence += data[2];
+                this.army.mythical.health += data[3];
+                this.army.mythical.speed += data[4];
             }
         }
-
-        // complete other if statements for other 4 troops.
     }
-    // create a method for sellEquipment
 }
