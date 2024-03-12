@@ -8,8 +8,6 @@ public class Player {
     protected int id;
     protected int gold;
     protected int xp;
-    protected int i = 0;
-
     // protected HomeGround homeGround;
     protected Army army;
 
@@ -85,7 +83,7 @@ public class Player {
             System.out.println("Insufficient gold to buy an Archer.");
             return; // Exit the method if there's not enough gold
         } else {
-            gold -= Obj1.price; // reduce the gold After buying the Archer
+            this.gold -= Obj1.price; // reduce the gold After buying the Archer
 
             // Create a new Archer soldier and assign it to the player's army
             if (army == null) {
@@ -101,10 +99,10 @@ public class Player {
         Soldier Obj2 = new Soldier("Knight", name);
 
         if (gold < Obj2.price) {
-            System.out.println("Insufficient gold to buy an Archer.");
+            System.out.println("Insufficient gold to buy an Knight.");
             return;
         } else {
-            gold -= Obj2.price;
+            this.gold -= Obj2.price;
 
             if (army == null) {
                 army = new Army();
@@ -118,10 +116,10 @@ public class Player {
         Soldier Obj3 = new Soldier("Knight", name);
 
         if (gold < Obj3.price) {
-            System.out.println("Insufficient gold to buy an Archer.");
+            System.out.println("Insufficient gold to buy an Mage.");
             return;
         } else {
-            gold -= Obj3.price;
+            this.gold -= Obj3.price;
 
             if (army == null) {
                 army = new Army();
@@ -135,10 +133,10 @@ public class Player {
         Soldier Obj4 = new Soldier("Knight", name);
 
         if (gold < Obj4.price) {
-            System.out.println("Insufficient gold to buy an Archer.");
+            System.out.println("Insufficient gold to buy an Healer.");
             return;
         } else {
-            gold -= Obj4.price;
+            this.gold -= Obj4.price;
 
             if (army == null) {
                 army = new Army();
@@ -152,10 +150,10 @@ public class Player {
         Soldier Obj5 = new Soldier("Knight", name);
 
         if (gold < Obj5.price) {
-            System.out.println("Insufficient gold to buy an Archer.");
+            System.out.println("Insufficient gold to buy an MythicalCreaturer.");
             return;
         } else {
-            gold -= Obj5.price;
+            this.gold -= Obj5.price;
 
             if (army == null) {
                 army = new Army();
@@ -177,13 +175,38 @@ public class Player {
     // whitewolf.buyEquipment("knight", "name")
     public void buyEquipment(String soldier, String equipment) {
         int[] data = db.getEquipmentData(equipment);
-        // check if the gold is enough for the purchase
-        // if not print a error message
-        // else reduce the gold
-        if (soldier == "Knight") {
 
-            this.army.knight.setEquipment(equipment);
+        if (gold < data[0]) { // check if the gold is enough for the purchase
+            System.out.println("Insufficient gold to buy an " + equipment); // if not print a error message
+            return;
+        } else {
+            this.gold -= data[0]; // else reduce the gold
+            if (soldier == "Archer") {
+
+                this.army.archer.setEquipment(equipment);
+            }
+
+            if (soldier == "Knight") {
+
+                this.army.knight.setEquipment(equipment);
+            }
+
+            if (soldier == "Mage") {
+
+                this.army.mage.setEquipment(equipment);
+            }
+
+            if (soldier == "Healer") {
+
+                this.army.healer.setEquipment(equipment);
+            }
+
+            if (soldier == "Mythical") {
+
+                this.army.mythical.setEquipment(equipment);
+            }
         }
+
         // complete other if statements for other 4 troops.
     }
     // create a method for sellEquipment
