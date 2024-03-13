@@ -45,14 +45,15 @@ public class Battle {
 
             turns++;
 
-            if (terminatedSoldiersChallenger.size() == 5){
+            if (terminatedSoldiersChallenger.size() == challengerArmy.length){
                 terminatedSoldiersChallenger.clear();
             }
 
-            if (terminatedSoldiersAcceptor.size() == 5){
+            if (terminatedSoldiersAcceptor.size() == accepterArmy.length){
                 terminatedSoldiersAcceptor.clear();
             }
 
+            //challenger attacks acceptor
             acceptorsIndex = LowestDefense(accepterArmy);
             challengersIndex = FastestPlayer(challengerArmy, terminatedSoldiersAcceptor);
             terminatedSoldiersChallenger.add(challengersIndex);
@@ -67,12 +68,30 @@ public class Battle {
             }
 
             if (accepterArmy.length == 0) {
-                //Computer won
+                //challenger won
                 return;
             }
 
+            // acceptor attacks challenger
+            challengersIndex = LowestDefense(challengerArmy);
+            acceptorsIndex = FastestPlayer(accepterArmy, terminatedSoldiersChallenger);
+            terminatedSoldiersAcceptor.add(acceptorsIndex);
 
+            if (accepterArmy[acceptorsIndex].category.equals("Healer")) {
+                int lowestAcceptorHealth = LowestHealth(accepterArmy);
+                accepterArmy[lowestAcceptorHealth].health += 0.1 * accepterArmy[acceptorsIndex].attack;
+            } else {
+                challengerArmy[challengersIndex].health -= 0.5 * accepterArmy[acceptorsIndex].attack - 0.1 * challengerArmy[challengersIndex].defence;
+                challengerArmy = RemoveDeadSoldiers(challengerArmy);
+                army2Size = challengerArmy.length;
+            }
+
+            if (challengerArmy.length == 0) {
+                // acceptor won
+                return;
+            }
         }
+        //draw
     }
 
     private int FastestPlayer(Soldier[] army, ArrayList<Integer> terminated){
