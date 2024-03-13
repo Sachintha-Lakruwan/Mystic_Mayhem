@@ -39,7 +39,7 @@ public class Player {
     public Player(String name, String username) {
 
         if (isUsernameTaken(username)) {
-            System.out.println("Username '" + username + "' is already taken. Please choose another username.");
+            game.animatePrint("Username '" + username + "' is already taken. Please choose another username.",GameName.ANSI_BLINK);
             // Handle the case where the username already exists, you can throw an exception
             // or handle it accordingly.
         } else {
@@ -56,7 +56,7 @@ public class Player {
         // this.players = new ArrayList<>();
 
         if (isUsernameTaken(username)) {
-            System.out.println("Username '" + username + "' is already taken. Please choose another username.");
+            game.animatePrint("Username '" + username + "' is already taken. Please choose another username.",GameName.ANSI_BLINK);
 
         } else {
             this.username = username;
