@@ -10,6 +10,7 @@ public class Player {
     protected int xp;
     // protected HomeGround homeGround;
     protected Army army;
+    GameName game=new GameName();
 
     static DataBase db = new DataBase();
     static List<String> players = new ArrayList<>();
@@ -70,12 +71,12 @@ public class Player {
         this.army = new Army(troops);
     }
 
-    public void buyArcher(String name) {
-        Soldier Obj1 = new Soldier("Archer", name);
+    public boolean buyArcher(String name) {
+        Soldier Obj1 = new Soldier("Archer",name);
 
         if (gold < Obj1.price) {
-            System.out.println("Insufficient gold to buy an Archer.");
-            return; // Exit the method if there's not enough gold
+            game.animatePrint("OOPS!!!--Insufficient gold to buy an Archer.Recreate the Army",game.ANSI_RED);
+            return false; // Exit the method if there's not enough gold
         } else {
             this.gold -= Obj1.price; // reduce the gold After buying the Archer
 
@@ -84,12 +85,11 @@ public class Player {
                 army = new Army(); // Initialize the army if it's not already initialized
             }
 
-            // this.army.archer = new Soldier("Archer", name);
-            this.army.archer = Obj1;
+            this.army.archer = new Soldier("Archer",name);
+            return true;
         }
 
     }
-
     public void sellArcher() {
         if (army != null && army.archer != null) { // Check if the player has an Archer
             int sellValue = (int) (army.archer.price * 0.9); // Calculate sell value (90% of the price)
@@ -106,23 +106,23 @@ public class Player {
         }
     }
 
-    public void buyKnight(String name) {
-        Soldier knight = new Soldier("Knight", name);
+    public boolean buyKnight(String name) {
+        Soldier Obj2 = new Soldier( "Knight",name);
 
-        if (gold < knight.price) {
-            System.out.println("Insufficient gold to buy a Knight.");
-            return;
+        if (gold < Obj2.price) {
+            game.animatePrint("OOPS!!!--Insufficient gold to buy an Archer.Recreate the Army",game.ANSI_RED);
+            return false;
         } else {
-            gold -= knight.price;
+            this.gold -= Obj2.price;
 
             if (army == null) {
                 army = new Army();
             }
 
-            army.knight = knight; // Assign the newly created knight soldier
+            this.army.knight = new Soldier( "Knight",name);
+            return true;
         }
     }
-
 
     public void sellKnight() {
         if (army != null && army.knight != null) {
@@ -135,25 +135,24 @@ public class Player {
         }
     }
 
-    public void buyMage(String name) {
-        Soldier mage = new Soldier("Mage", name); // Corrected order of arguments
+    public boolean buyMage(String name) {
+        Soldier Obj3 = new Soldier( "Mage",name);
 
-        if (gold < mage.price) {
-            System.out.println("Insufficient gold to buy a Mage.");
-            return;
+        if (gold < Obj3.price) {
+            System.out.println("Insufficient gold to buy an Mage.");
+            return false;
         } else {
-            gold -= mage.price;
+            this.gold -= Obj3.price;
 
             if (army == null) {
                 army = new Army();
             }
 
-            army.mage = mage; // Assign the newly created mage soldier
+            this.army.mage =new Soldier( "Mage",name);
+            return true;
         }
     }
-
-
-    public void sellMage() {
+        public void sellMage() {
         if (army != null && army.mage != null) {
             int sellValue = (int) (army.mage.price * 0.9);
             this.gold += sellValue;
@@ -164,24 +163,23 @@ public class Player {
         }
     }
 
-    public void buyHealer(String name) {
-        Soldier healer = new Soldier("Healer", name); // Corrected order of arguments
+    public boolean buyHealer(String name) {
+        Soldier Obj4 = new Soldier( "Healer",name);
 
-        if (gold < healer.price) {
-            System.out.println("Insufficient gold to buy a Healer.");
-            return;
+        if (gold < Obj4.price) {
+            game.animatePrint("OOPS!!!--Insufficient gold to buy an Archer.Recreate the Army",game.ANSI_RED);
+            return false;
         } else {
-            gold -= healer.price;
+            this.gold -= Obj4.price;
 
             if (army == null) {
                 army = new Army();
             }
 
-            army.healer = healer; // Assign the newly created healer soldier
+            this.army.healer = new Soldier( "Healer",name);
+            return true;
         }
     }
-
-
     public void sellHealer() {
         if (army != null && army.healer != null) {
             int sellValue = (int) (army.healer.price * 0.9);
@@ -193,23 +191,23 @@ public class Player {
         }
     }
 
-    public void buyMythicalCreature(String name) {
-        Soldier mythicalCreature = new Soldier("MythicalCreature", name); // Corrected order of arguments
+    public boolean buyMythicalCreature(String name) {
+        Soldier Obj5 = new Soldier("Mythical",name);
 
-        if (gold < mythicalCreature.price) {
-            System.out.println("Insufficient gold to buy a MythicalCreature.");
-            return;
+        if (gold < Obj5.price) {
+            game.animatePrint("OOPS!!!--Insufficient gold to buy an Archer.Recreate the Army",game.ANSI_RED);
+            return false;
         } else {
-            gold -= mythicalCreature.price;
+            this.gold -= Obj5.price;
 
             if (army == null) {
                 army = new Army();
             }
 
-            army.mythical = mythicalCreature; // Assign the newly created mythical creature soldier
+            this.army.mythical = new Soldier("Mythical",name);
+            return true;
         }
     }
-
 
     public void sellMythicalCreature() {
         if (army != null && army.mythical != null) {
