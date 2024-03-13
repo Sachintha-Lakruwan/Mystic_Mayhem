@@ -11,13 +11,14 @@ public class Main {
         // register new player
         Player jacob = new Player("Jacob Lara", "jacob");
 
-        // now, two players are created successfully. one of them is whitewolf and his
-        // army is already created.
-        // other one is Jacob, who was created by the user, and his army is yet to be
-        // created
+        jacob.buyArcher("Shooter");
+        jacob.buyKnight("Squire");
+        jacob.buyMage("Warlock");
+        jacob.buyHealer("Soother");
+        jacob.buyMythicalCreature("Dragon");
 
-        whiteWolf.buyEquipment("Knight", "Chainmail");
-        System.out.println(whiteWolf.army.knight.attack);
+        Battle battlefield = new Battle();
 
+        battlefield.Challenge(whiteWolf, jacob, "HilCrest");
     }
 }

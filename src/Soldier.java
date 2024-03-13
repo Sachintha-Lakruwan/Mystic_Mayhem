@@ -11,8 +11,6 @@ public class Soldier {
     private static final DataBase database = new DataBase();
 
     public Soldier(String category, String name) {
-        System.out.println(category);
-        System.out.println(name);
         Object[] soldierData = database.getSoldierData(name);
 
         if (soldierData != null) {
