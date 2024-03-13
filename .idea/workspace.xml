@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="interface class doyouwantbuy function created and getEquipmentDataList() created in database class and buyEquipment method updated in player class">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="color added">
       <change beforePath="$PROJECT_DIR$/src/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,7 +195,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710370384788</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="color added">
+      <option name="closed" value="true" />
+      <created>1710373239631</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1710373239631</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,6 +284,7 @@
     <MESSAGE value="interface updated" />
     <MESSAGE value="Merge pull request #15 from Sachintha-Lakruwan/sachintha---battle&#10;&#10;Interface Added" />
     <MESSAGE value="interface class doyouwantbuy function created and getEquipmentDataList() created in database class and buyEquipment method updated in player class" />
-    <option name="LAST_COMMIT_MESSAGE" value="interface class doyouwantbuy function created and getEquipmentDataList() created in database class and buyEquipment method updated in player class" />
+    <MESSAGE value="color added" />
+    <option name="LAST_COMMIT_MESSAGE" value="color added" />
   </component>
 </project>
