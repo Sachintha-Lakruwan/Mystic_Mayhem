@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class Player {
+    public static final String Army = null;
     protected String name;
     protected String username;
     protected int id;
