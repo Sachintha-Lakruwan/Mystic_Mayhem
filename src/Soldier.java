@@ -31,41 +31,8 @@ public class Soldier {
         this.equipment = new Equipment(equipmentName);
         this.attack = this.attack + this.equipment.attack;
         this.price = this.equipment.price;
-        this.name = this.equipment.name;
         this.defence = this.defence + this.equipment.defence;
         this.health = this.health + this.equipment.health;
+        this.speed = this.speed + this.equipment.speed;
     }
-    /*
-     * public int setEquipment2(String equipmentName,int currentGC)
-     * {
-     * Equipment equipment1=new Equipment(equipmentName);
-     * if(equipment1.price<=currentGC){
-     * this.equipment = new Equipment(equipmentName);
-     * currentGC=currentGC-equipment.price;
-     * System.out.println("success fully added");
-     * return currentGC;
-     * 
-     * 
-     * 
-     * }
-     * System.out.println("Your Coins is"+currentGC+"equipment price is"+equipment1.
-     * price);
-     * return currentGC;
-     * }
-     * public int setsoldiers(String equipmentName,int currentGC) {
-     * Equipment equipment1 = new Equipment(equipmentName);
-     * if (equipment1.price <= currentGC) {
-     * this.equipment = new Equipment(equipmentName);
-     * currentGC = currentGC - equipment.price;
-     * return currentGC;
-     * 
-     * 
-     * }
-     * System.out.println("Your Coins is" + currentGC + "equipment price is" +
-     * equipment1.price);
-     * return currentGC;
-     * 
-     * 
-     * }
-     */
 }
