@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Battle class -- half done">
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="int --&gt; float">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EquipmentData.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Soldier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soldier.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TroopsData.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +57,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Equipment.executor": "Run",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -179,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710335943737</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="int --&gt; float">
+      <option name="closed" value="true" />
+      <created>1710336533163</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710336533163</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +206,7 @@
     <MESSAGE value="Main file completed" />
     <MESSAGE value="First stage is done!" />
     <MESSAGE value="Battle class -- half done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Battle class -- half done" />
+    <MESSAGE value="int --&gt; float" />
+    <option name="LAST_COMMIT_MESSAGE" value="int --&gt; float" />
   </component>
 </project>
