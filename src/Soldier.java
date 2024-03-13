@@ -2,10 +2,10 @@ public class Soldier {
 
     String name;
     int price;
-    int attack;
-    int defence;
-    int health;
-    int speed;
+    double attack;
+    double defence;
+    double health;
+    double speed;
     String category;
     Equipment equipment;
     private static final DataBase database = new DataBase();

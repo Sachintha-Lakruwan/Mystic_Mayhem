@@ -2,10 +2,10 @@ public class Equipment {
 
     String name;
     int price;
-    int attack;
-    int defence;
-    int health;
-    int speed;
+    double attack;
+    double defence;
+    double health;
+    double speed;
     public static  DataBase database = new DataBase();
 
     public  Equipment(String name) {
