@@ -3,11 +3,10 @@ public class Main {
 
         // initialize the existing player and his army
         Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
-
         String[] troops = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
-        // whiteWolf.createArmy(troops);
-        // whiteWolf.army.archer.setEquipment("Chainmail");
-        // whiteWolf.army.healer.setEquipment("Amulet");
+        whiteWolf.createArmy(troops);
+        whiteWolf.army.archer.setEquipment("Chainmail");
+        whiteWolf.army.healer.setEquipment("Amulet");
 
         // register new player
         Player jacob = new Player("Jacob Lara", "jacob");
@@ -17,14 +16,8 @@ public class Main {
         // other one is Jacob, who was created by the user, and his army is yet to be
         // created
 
-        // whiteWolf.buyEquipment("Knight", "Chainmail");
-
-        jacob.buyArcher("Shooter");
-
-        // System.out.println(jacob.army.archer.defence);
-
-        jacob.buyEquipment("Archer", "Chainmail");
-        System.out.println(jacob.army.archer.defence);
+        whiteWolf.buyEquipment("Knight", "Chainmail");
+        System.out.println(whiteWolf.army.knight.attack);
 
     }
 }
