@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="battle class completed">
-      <change beforePath="$PROJECT_DIR$/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Soldier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Soldier.java" afterDir="false" />
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Last stage done">
+      <changelist_data name="Sachintha Lakruwan" email="100019766+sachintha-lakruwan@users.noreply.github.com" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Combact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Combact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameName.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,29 +21,47 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="package.json" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Sachintha Lakruwan &lt;100019766+sachintha-lakruwan@users.noreply.github.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="Hasitha2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
     &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;Sachintha-Lakruwan&quot;
+    &quot;assignee&quot;: &quot;hasithasandunlakshan&quot;
   }
 }</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="98f8d8df-82ea-44fe-9cf9-3c8f861b5351" />
+        <option name="accountId" value="2e165ba5-2dff-4ec9-959b-28b6b8cbb4c4" />
         <option name="url" value="https://github.com/Sachintha-Lakruwan/Mystic_Mayhem.git" />
       </UrlAndAccount>
     </option>
@@ -56,48 +79,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Combact.executor": "Run",
+    "Application.DataBase.executor": "Run",
     "Application.Equipment.executor": "Run",
+    "Application.GameName.executor": "Run",
+    "Application.Interface.executor": "Run",
     "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
+    "Application.Soldier.executor": "Run",
+    "Application.combat.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "sachintha---battle",
+    "git-widget-placeholder": "Hasitha-HomeGround",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "project.propVCSSupport.Mappings",
     "vue.rearranger.settings.migration": "true"
-  },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JSON"
-    ]
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="Equipment" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Equipment" />
-      <module name="Mystic Mayhem" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Equipment" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -110,7 +112,8 @@
       <workItem from="1709924251040" duration="4059000" />
       <workItem from="1709962224092" duration="10208000" />
       <workItem from="1709973503663" duration="2116000" />
-      <workItem from="1709985690684" duration="11987000" />
+      <workItem from="1710009423421" duration="11574000" />
+      <workItem from="1710301407846" duration="38183000" />
     </task>
     <task id="LOCAL-00001" summary="initial files">
       <option name="closed" value="true" />
@@ -160,66 +163,95 @@
       <option name="project" value="LOCAL" />
       <updated>1709975325296</updated>
     </task>
-    <task id="LOCAL-00007" summary="First stage is done!">
+    <task id="LOCAL-00007" summary="Database Added">
       <option name="closed" value="true" />
-      <created>1710327067312</created>
+      <created>1710014130331</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1710327067312</updated>
+      <updated>1710014130331</updated>
     </task>
-    <task id="LOCAL-00008" summary="Battle class -- half done">
+    <task id="LOCAL-00008" summary="interface and database updated">
       <option name="closed" value="true" />
-      <created>1710335943737</created>
+      <created>1710313200420</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1710335943737</updated>
+      <updated>1710313200420</updated>
     </task>
-    <task id="LOCAL-00009" summary="int --&gt; float">
+    <task id="LOCAL-00009" summary="Last stage done">
       <option name="closed" value="true" />
-      <created>1710336533163</created>
+      <created>1710336954139</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1710336533163</updated>
+      <updated>1710336954139</updated>
     </task>
-    <task id="LOCAL-00010" summary="terminated lists --&gt; ArrayList&lt;&gt;">
-      <option name="closed" value="true" />
-      <created>1710341767336</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1710341767336</updated>
-    </task>
-    <task id="LOCAL-00011" summary="battle class completed">
-      <option name="closed" value="true" />
-      <created>1710346885552</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1710346885552</updated>
-    </task>
-    <task id="LOCAL-00012" summary="battle class completed">
-      <option name="closed" value="true" />
-      <created>1710349747183</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1710349747183</updated>
-    </task>
-    <option name="localTasksCounter" value="13" />
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Hasitha-HomeGround" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="main" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/Hasitha" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="origin/main" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Hasitha-HomeGround" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -229,10 +261,12 @@
     <MESSAGE value="initial files" />
     <MESSAGE value="Main file completed" />
     <MESSAGE value="First stage is done!" />
-    <MESSAGE value="Battle class -- half done" />
-    <MESSAGE value="int --&gt; float" />
-    <MESSAGE value="terminated lists --&gt; ArrayList&lt;&gt;" />
-    <MESSAGE value="battle class completed" />
-    <option name="LAST_COMMIT_MESSAGE" value="battle class completed" />
+    <MESSAGE value="EquipmentData added" />
+    <MESSAGE value="Database Added" />
+    <MESSAGE value="interface and database updated" />
+    <MESSAGE value="Last stage done" />
+    <MESSAGE value="interface updated" />
+    <MESSAGE value="Merge pull request #15 from Sachintha-Lakruwan/sachintha---battle&#10;&#10;Interface Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge pull request #15 from Sachintha-Lakruwan/sachintha---battle&#10;&#10;Interface Added" />
   </component>
 </project>

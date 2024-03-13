@@ -2,6 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Battle {
+
+    Combact showResult = new Combact();
+
     public void Challenge(Player challenger, Player accepter, String ground){
         if (ground == "Desert"){
             Desert(challenger, accepter);
@@ -197,7 +200,7 @@ public class Battle {
             }
 
             if (accepterArmy.length == 0) {
-                //challenger won
+                showResult.showWinner(false);
                 return;
             }
 
@@ -216,7 +219,7 @@ public class Battle {
             }
 
             if (challengerArmy.length == 0) {
-                // acceptor won
+                showResult.showWinner(true);
                 return;
             }
         }
