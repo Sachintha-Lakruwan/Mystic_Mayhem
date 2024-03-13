@@ -31,9 +31,9 @@ public class Soldier {
         this.equipment = new Equipment(equipmentName);
         this.attack = this.attack + this.equipment.attack;
         this.price = this.equipment.price;
-        this.name = this.equipment.name;
         this.defence = this.defence + this.equipment.defence;
         this.health = this.health + this.equipment.health;
+        this.speed = this.speed + this.equipment.speed;
     }
     /*
      * public int setEquipment2(String equipmentName,int currentGC)

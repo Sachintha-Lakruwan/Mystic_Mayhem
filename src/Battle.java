@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Battle {
-    public void Challege(Player challenger, Player accepter, String ground) {
+    public void Challenge(Player challenger, Player accepter, String ground) {
         if (ground == "Desert") {
             Desert(challenger, accepter);
         } else if (ground == "MarshLand") {
@@ -68,13 +68,14 @@ public class Battle {
             List<String> sunchildren, List<String> mystics) {
         // Apply attack and defense modifiers for Highlanders
         if (highlanders.contains(soldier.name)) {
+
             soldier.attack += 1;
             soldier.defence += 1;
-
         }
         // Apply speed modifier for Marshlanders and Sunchildren
         if (marshlanders.contains(soldier.name) || sunchildren.contains(soldier.name)) {
             soldier.speed -= 1;
+
         }
     }
 
@@ -146,10 +147,18 @@ public class Battle {
         // Apply speed modifier for Marshlanders and Sunchildren
         if (mystics.contains(soldier.name)) {
             soldier.speed += 2;
+
         }
     }
 
 }
+
+// System.out.println("Name " + soldier.name);
+// System.out.println("Attack " + soldier.attack);
+// System.out.println("Defence " + soldier.defence);
+// System.out.println("Health " + soldier.health);
+// System.out.println("Speed " + soldier.speed);
+// System.out.println("-----------------------------");
 
 // public void HilCrest(Player challenger, Player accepter) {
 // System.out.println("Battle in HilCrest");

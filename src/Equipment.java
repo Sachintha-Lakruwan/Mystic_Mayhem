@@ -6,9 +6,9 @@ public class Equipment {
     double defence;
     double health;
     double speed;
-    public static  DataBase database = new DataBase();
+    public static DataBase database = new DataBase();
 
-    public  Equipment(String name) {
+    public Equipment(String name) {
         int[] equipmentData = database.getEquipmentData(name);
 
         // Check if equipment data is found

@@ -123,7 +123,6 @@ public class Player {
         }
     }
 
-
     public void sellKnight() {
         if (army != null && army.knight != null) {
             int sellValue = (int) (army.knight.price * 0.9);
@@ -151,7 +150,6 @@ public class Player {
             army.mage = mage; // Assign the newly created mage soldier
         }
     }
-
 
     public void sellMage() {
         if (army != null && army.mage != null) {
@@ -181,7 +179,6 @@ public class Player {
         }
     }
 
-
     public void sellHealer() {
         if (army != null && army.healer != null) {
             int sellValue = (int) (army.healer.price * 0.9);
@@ -209,7 +206,6 @@ public class Player {
             army.mythical = mythicalCreature; // Assign the newly created mythical creature soldier
         }
     }
-
 
     public void sellMythicalCreature() {
         if (army != null && army.mythical != null) {
