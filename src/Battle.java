@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -199,6 +200,7 @@ public class Battle {
                 army1Size = accepterArmy.length;
             }
 
+
             if (accepterArmy.length == 0) {
                 showResult.showWinner(false);
                 return;
@@ -223,7 +225,7 @@ public class Battle {
                 return;
             }
         }
-        //draw
+        System.out.println("---Match Drawn---");
     }
 
     private int FastestPlayer(Soldier[] army, ArrayList<Integer> terminated){
