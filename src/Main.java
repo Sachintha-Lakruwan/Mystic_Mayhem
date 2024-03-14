@@ -16,6 +16,7 @@ public class Main {
         test.registerPlayer();
         Player player=test.player;
         test.createArmy(player);
+        test.doYouWantBuyEquipment(player);
         test.printArmy(player);
 
         //Whitewolf is challenging you! What are you gonna do?
@@ -31,6 +32,7 @@ public class Main {
 
         boolean challengeAccepted = test.defaultPlayer(whiteWolf);
         String ground = test.selectHomeLand();
+
 
         Battle battleField = new Battle();
         if (challengeAccepted){

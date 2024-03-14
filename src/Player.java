@@ -225,7 +225,7 @@ public class Player {
         int[] data = db.getEquipmentData(equipment);
 
         if (gold < data[0]) { // check if the gold is enough for the purchase
-            System.out.println("Insufficient gold to buy an " + equipment); // if not print a error message
+            game.animatePrint("Insufficient gold to buy an " + equipment,GameName.ANSI_RED); // if not print a error message
             return;
         } else {
             this.gold -= data[0]; // else reduce the gold
@@ -235,29 +235,30 @@ public class Player {
 
             }
 
-            if (soldier == "Knight") {
+            else if (soldier == "Knight") {
 
                 this.army.knight.setEquipment(equipment);
 
             }
 
-            if (soldier == "Mage") {
+            else if (soldier == "Mage") {
 
                 this.army.mage.setEquipment(equipment);
 
             }
 
-            if (soldier == "Healer") {
+            else if (soldier == "Healer") {
 
                 this.army.healer.setEquipment(equipment);
 
             }
 
-            if (soldier == "Mythical") {
+            else if (soldier == "Mythical") {
 
                 this.army.mythical.setEquipment(equipment);
 
             }
+            game.animatePrint("Successfully added",GameName.ANSI_RED);
         }
     }
 }

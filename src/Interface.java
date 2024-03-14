@@ -195,6 +195,7 @@ public class Interface extends GameName {
                 }
 
                 db.getCategoryData("Mythical");
+
                 animatePrint("Select Your Mythical....(Give index)", ANSI_GREEN);
                 int mythical = x.nextInt();
                 if (mythical == 1) {

@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -6,13 +7,13 @@ public class Battle {
     Combact showResult = new Combact();
 
     public void Challenge(Player challenger, Player accepter, String ground){
-        if (ground == "Desert"){
+        if (ground.equals("Desert")){
             Desert(challenger, accepter);
-        } else if (ground == "MarshLand"){
+        } else if (ground.equals("MarshLand") ){
             MarshLand(challenger, accepter);
-        } else if (ground == "HilCrest"){
+        } else if (ground.equals( "Hilcrest")){
             HilCrest(challenger, accepter);
-        } else {
+        } else if (ground.equals( "Arcane")){
             Arcane(challenger, accepter);
         }
     }
@@ -56,6 +57,21 @@ public class Battle {
 
     }
 
+//    private void UpdatePlayers(Player player, List<String> highlanders, List<String> marshlanders,
+//                               List<String> sunchildren, List<String> mystics,String ground){
+//        if(ground.equals("Hilcrest")){
+//
+//
+//
+//        applyModifiersHilCrest(player.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
+//        applyModifiersHilCrest(player.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
+//        applyModifiersHilCrest(player.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
+//        applyModifiersHilCrest(player.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
+//        applyModifiersHilCrest(player.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);}
+//
+//
+//    }
+
     public void HilCrest(Player challenger, Player accepter) {
         // Apply modifiers for each soldier type
         applyModifiersHilCrest(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
@@ -63,8 +79,12 @@ public class Battle {
         applyModifiersHilCrest(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersHilCrest(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersHilCrest(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
-        //
 
+        applyModifiersHilCrest(accepter.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(accepter.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(accepter.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(accepter.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(accepter.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
 
         Fight(challenger, accepter, "HilCrest");
     }
@@ -76,9 +96,11 @@ public class Battle {
 
             soldier.attack += 1;
             soldier.defence += 1;
+
         }
         // Apply speed modifier for Marshlanders and Sunchildren
         if (marshlanders.contains(soldier.name) || sunchildren.contains(soldier.name)) {
+
             soldier.speed -= 1;
 
         }
@@ -91,6 +113,12 @@ public class Battle {
         applyModifiersMarshLand(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersMarshLand(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersMarshLand(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+
+        applyModifiersMarshLand(accepter.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersMarshLand(accepter.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersMarshLand(accepter.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersMarshLand(accepter.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersMarshLand(accepter.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
         Fight(challenger, accepter, "MarshLand");
 
     }
@@ -98,25 +126,38 @@ public class Battle {
     private void applyModifiersMarshLand(Soldier soldier, List<String> highlanders, List<String> marshlanders,
                                          List<String> sunchildren, List<String> mystics) {
         if (marshlanders.contains(soldier.name)) {
+
             soldier.defence += 2;
+
         }
         // Apply speed modifier for Marshlanders and Sunchildren
         if (sunchildren.contains(soldier.name)) {
+
             soldier.attack -= 1;
+
         }
 
         if (mystics.contains(soldier.name)) {
+
             soldier.speed -= 1;
+
         }
     }
 
     public void Desert(Player challenger, Player accepter) {
         // Apply modifiers for each soldier type
+        System.out.println("llllllllllllllllllllllllllllllllllllllllllllllll");
         applyModifiersDesert(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+
+        applyModifiersDesert(accepter.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersDesert(accepter.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersDesert(accepter.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersDesert(accepter.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersDesert(accepter.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
         Fight(challenger, accepter, "Desert");
 
     }
@@ -124,11 +165,14 @@ public class Battle {
     private void applyModifiersDesert(Soldier soldier, List<String> highlanders, List<String> marshlanders,
                                       List<String> sunchildren, List<String> mystics) {
         if (marshlanders.contains(soldier.name)) {
+
             soldier.health -= 1;
         }
         // Apply speed modifier for Marshlanders and Sunchildren
         if (sunchildren.contains(soldier.name)) {
-            soldier.attack -= 1;
+
+            soldier.attack += 1;
+
         }
     }
 
@@ -141,6 +185,12 @@ public class Battle {
         applyModifiersArcane(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersArcane(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersArcane(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+
+        applyModifiersArcane(accepter.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersArcane(accepter.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersArcane(accepter.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersArcane(accepter.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersArcane(accepter.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
         Fight(challenger, accepter, "Arcane");
 
     }
@@ -148,11 +198,21 @@ public class Battle {
     private void applyModifiersArcane(Soldier soldier, List<String> highlanders, List<String> marshlanders,
                                       List<String> sunchildren, List<String> mystics) {
         if (highlanders.contains(soldier.name)) {
+
             soldier.speed -= 1;
             soldier.defence -= 1;
+
+        }
+
+        if (Marshlanders.contains(soldier.name)) {
+
+            soldier.speed -= 1;
+            soldier.defence -= 1;
+
         }
         // Apply speed modifier for Marshlanders and Sunchildren
         if (mystics.contains(soldier.name)) {
+
             soldier.speed += 2;
 
         }
@@ -198,9 +258,12 @@ public class Battle {
                 }
             } else {
                 accepterArmy[acceptorsIndex].health -= 0.5 * challengerArmy[challengersIndex].attack - 0.1 * accepterArmy[acceptorsIndex].defence;
-                accepterArmy = RemoveDeadSoldiers(accepterArmy);
-                army1Size = accepterArmy.length;
+
             }
+
+            showResult.showStat("sachintha", "lakruwan", challengerArmy[challengersIndex], accepterArmy[acceptorsIndex], 10, 15);
+            accepterArmy = RemoveDeadSoldiers(accepterArmy);
+            army1Size = accepterArmy.length;
 
             if (accepterArmy.length == 0) {
                 showResult.showWinner(false);
@@ -217,16 +280,19 @@ public class Battle {
                 accepterArmy[lowestAcceptorHealth].health += 0.1 * accepterArmy[acceptorsIndex].attack;
             } else {
                 challengerArmy[challengersIndex].health -= 0.5 * accepterArmy[acceptorsIndex].attack - 0.1 * challengerArmy[challengersIndex].defence;
-                challengerArmy = RemoveDeadSoldiers(challengerArmy);
-                army2Size = challengerArmy.length;
+
             }
+
+            showResult.showStat("lakruwan", "sachintha", accepterArmy[acceptorsIndex],challengerArmy[challengersIndex], 15, 10);
+            challengerArmy = RemoveDeadSoldiers(challengerArmy);
+            army2Size = challengerArmy.length;
 
             if (challengerArmy.length == 0) {
                 showResult.showWinner(true);
                 return;
             }
         }
-        //draw
+        showResult.drawBattle();
     }
 
     private int FastestPlayer(Soldier[] army, ArrayList<Integer> terminated){
@@ -279,7 +345,7 @@ public class Battle {
         int count = 0; // Initialize a counter for the valid soldiers in temp
 
         for (int i = 0; i < army.length; i++){
-            if (army[i].health <= 5){
+            if (army[i].health <= 0){
                 continue; // Skip dead soldiers
             }
             temp[count] = army[i]; // Add alive soldiers to temp
@@ -292,5 +358,4 @@ public class Battle {
 
         return result;
     }
-
 }

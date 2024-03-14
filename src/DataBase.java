@@ -45,7 +45,7 @@ public class DataBase {
         soldiersData.add(Arrays.asList("Saggitarius", "Archer", 230, 18, 7, 12, 17));
         soldiersData.add(Arrays.asList("Swiftblade", "Knight", 250, 18, 20, 17, 13));
         soldiersData.add(Arrays.asList("Eldritch", "Mage", 270, 19, 17, 18, 14));
-        soldiersData.add(Arrays.asList("Lightbringer", "Healer   ", 260, 17, 15, 19, 12));
+        soldiersData.add(Arrays.asList("Lightbringer", "Healer", 260, 17, 15, 19, 12));
         soldiersData.add(Arrays.asList("Pegasus", "Mythical", 340, 14, 18, 20, 20));
     }
 
@@ -129,6 +129,6 @@ public class DataBase {
     }
     public static void main(String args[]){
         DataBase db=new DataBase();
-        db.getEquipmentDataList();
+        db.getCategoryData("Mythical");
     }
 }
