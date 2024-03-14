@@ -1,19 +1,23 @@
 public class Combact {
     GameName game=new GameName();
+]
     public void showStat(String attackingPlayer, Soldier attacker, Soldier defender) {
         // Print winner
        // System.out.println("Winner: " + attackingPlayer);
         System.out.println("Name Of Attacking Player:  "+attackingPlayer);
+
         // Print attacker's attack on defender
         game.blinkText(attacker.name + " attacks " + defender.name,2,300,GameName.ANSI_RED);
 
         // Print health before attack
+
         game.animatePrint("Defence of Players:",GameName.ANSI_BLUE);
         System.out.println("+----------------+----------------+");
         System.out.println("|    Attacker's Defence    |    Defender's Defence    |");
         System.out.println("+----------------+----------------+");
         System.out.printf("|%10.2f          |%10.2f            |%n", attacker.defence, defender.defence);
         System.out.println("+----------------+----------------+");
+
 
         // Check if defender's health is zero or negative
 

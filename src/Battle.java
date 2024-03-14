@@ -143,7 +143,6 @@ public class Battle {
     }
 
     public void Desert(Player challenger, Player accepter) {
-        // Apply modifiers for each soldier type
 
         applyModifiersDesert(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
@@ -257,10 +256,12 @@ public class Battle {
 
             }
 
+
             turns++;
             System.out.println("Turn no--"+turns);
             showResult.showStat(challenger.name, challengerArmy[challengersIndex], accepterArmy[acceptorsIndex]);
             //any key
+
             accepterArmy = RemoveDeadSoldiers(accepterArmy);
             army1Size = accepterArmy.length;
 
@@ -289,12 +290,18 @@ public class Battle {
             challengerArmy = RemoveDeadSoldiers(challengerArmy);
             army2Size = challengerArmy.length;
 
+            showResult.showStat("lakruwan", "sachintha", accepterArmy[acceptorsIndex],challengerArmy[challengersIndex], 15, 10);
+            challengerArmy = RemoveDeadSoldiers(challengerArmy);
+            army2Size = challengerArmy.length;
+
             if (challengerArmy.length == 0) {
                 showResult.showWinner(true);
                 return;
             }
         }
+      
         showResult.drawBattle();
+
     }
 
     private int FastestPlayer(Soldier[] army, ArrayList<Integer> terminated){
@@ -361,5 +368,5 @@ public class Battle {
         return result;
     }
 
-
 }
+
