@@ -17,7 +17,7 @@ public class Interface extends GameName {
     public int registerPlayer() {
         int k = 0;
         Scanner scanner = new Scanner(System.in);
-        animatePrintFast("Welcome to the Username Registration Interface",ANSI_YELLOW);
+        animatePrintFast("Welcome to the Mystic-MayhemS",ANSI_YELLOW);
 
         // Animation: Printing each line with a slight delay
         animatePrint("-----------------------------",ANSI_RED);
@@ -236,15 +236,12 @@ public class Interface extends GameName {
         }
     }
 
-    public void printArmy(){
-        blinkText("Creating Your Army..........",5,500,ANSI_PURPLE);
-
+    public void printArmySupportFunction(Player player){
         System.out.println();
 
-
         animatePrintFast("╔═══════════════════════════════════════════╗", ANSI_CYAN);
-        animatePrintFast("║                YOUR ARMY                  ║", ANSI_YELLOW);
-        animatePrint("╚═══════════════════════════════════════════╝", ANSI_CYAN);
+        animatePrintFast(      "        " +       player.username+" 's ARMY  "              , ANSI_YELLOW);
+        animatePrintFast("╚═══════════════════════════════════════════╝", ANSI_CYAN);
 
         animatePrintFast("┌───────────────┬───────────────────────────┐", ANSI_GREEN);
         animatePrintFast("│  Unit Type    │          Name             │", ANSI_GREEN);
@@ -256,7 +253,50 @@ public class Interface extends GameName {
         animatePrintFast("│   Mythical    │ " + padRight(player.army.mythical.name, 25) + " │", ANSI_RED);
         animatePrintFast("└───────────────┴───────────────────────────┘", ANSI_GREEN);
     }
-    public void doYouWantBuyEquipment(Player player){
+
+    public void printArmy(Player player, boolean creating){
+        if (creating) {
+            animatePrint("Creating Your Army..........", ANSI_PURPLE);
+        }
+        printArmySupportFunction(player);
+    }
+
+    public void printArmy(Player player){
+        printArmySupportFunction(player);
+    }
+
+    public String selectHomeLand() {
+        String[] Homelands = {"Desert", "MarshLand", "HilCrest", "Arcane"};
+        System.out.println("Select your homeland:");
+        System.out.println("Index  Name");
+        int index = 1; // Start index from 1
+        for (String homeland : Homelands) {
+            // Print index and homeland
+            System.out.printf("%-6d %-13s%n", index, homeland);
+            index++; // Increment index by 1
+        }
+        Scanner x=new Scanner(System.in);
+        int selectedHomeLand=x.nextInt();
+        String setSelectedHomeGround;
+        if(selectedHomeLand==1){
+            setSelectedHomeGround="Desert";
+        }
+        else if(selectedHomeLand==2){
+            setSelectedHomeGround="MarshLand";
+        }
+        else if(selectedHomeLand==3){
+            setSelectedHomeGround="HilCrest";
+        }
+        else{
+            setSelectedHomeGround="Arcane";
+        }
+        return setSelectedHomeGround;
+
+
+    }
+
+    public void doYouWantBuyEquipment(Player player)
+    {
         Scanner x=new Scanner(System.in);
         blinkText("Do you want buy Equipment(y/n)???????",3,300,ANSI_GREEN);
         String state=x.nextLine();
@@ -421,7 +461,8 @@ public class Interface extends GameName {
 
 
     }
-    public void showSoldiers(){
+    public void showSoldiers()
+    {
         System.out.println("What is the soldier you add Equipments:");
         System.out.println("Index  Name");
         int index = 1; // Start index from 1
@@ -433,13 +474,38 @@ public class Interface extends GameName {
             index++; // Increment index by 1
         }
     }
-    public static void selectHomeland(){
-        //complete the function
+    public boolean defaultPlayer(Player player) {
+        animatePrint(player.username + " is Challenging you!!! What are you gonna do?", ANSI_RED);
 
+        System.out.println("Select an option:");
+        System.out.println("1. Accept the challenge");
+        System.out.println("2. View player army");
+        System.out.println("3. Decline the challenge");
+
+        Scanner x = new Scanner(System.in);
+        boolean status = false;
+
+        int choice = x.nextInt();
+        switch (choice) {
+            case 1:
+                blinkText("You accept the challange",3,400,ANSI_GREEN);
+                status = true;
+                break;
+            case 2:
+                printArmy(player);
+                defaultPlayer(player);
+
+                break;
+            case 3:
+                status = false;
+                break;
+            default:
+                blinkText("Invalid option. Please select again.",3,500,ANSI_RED);
+                break;
+        }
+        return status;
     }
-    public static void selectPlayer(){
-        //complete the function
-    }
+
 public static void main(String Args[]){
         Interface k=new Interface();
     Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
@@ -449,8 +515,13 @@ public static void main(String Args[]){
     whiteWolf.army.archer.setEquipment("Chainmail");
     whiteWolf.army.healer.setEquipment("Amulet");
     DataBase db=new DataBase();
-   k.doYouWantBuyEquipment(whiteWolf);
-     k.showSoldiers();
+   /*k.doYouWantBuyEquipment(whiteWolf);
+     k.showSoldiers();*/
+
+    boolean L= k.defaultPlayer(whiteWolf);
+    String h=k.selectHomeLand() ;
+    System.out.println(h);
+
 
 }
 

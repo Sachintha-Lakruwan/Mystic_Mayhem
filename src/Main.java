@@ -3,55 +3,39 @@ public class Main {
         GameName game=new GameName();
         game.gameStart();
 
-
-        // ASCII art with light blue color
-
-        /*
-
-        // initialize the existing player and his army
+        //initialise default player
         Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
-
         String[] troops = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
         whiteWolf.createArmy(troops);
         whiteWolf.army.archer.setEquipment("Chainmail");
         whiteWolf.army.healer.setEquipment("Amulet");
 
-        // register new player
-        Player jacob = new Player("Jacob Lara", "jacob");
-
-        // now, two players are created successfully. one of them is whitewolf and his
-        // army is already created.
-        // other one is Jacob, who was created by the user, and his army is yet to be
-        // created
-
-        whiteWolf.buyEquipment("Knight", "Chainmail");
-
-        jacob.buyArcher("Shooter");
-        System.out.println(jacob.army.archer.defence);
-
-        jacob.buyEquipment("Archer", "Chainmail");
-        System.out.println(jacob.army.archer.defence);*/
         Interface test=new Interface();
 
-        //test.registerplayer();
-
-
+        //register user as a player
         test.registerPlayer();
-        //layer player=new Player("has","san");
         Player player=test.player;
         test.createArmy(player);
-        test.printArmy();
+        test.printArmy(player);
 
-        //System.out.println(player.army.archer.name);
-        //player.buyEquipment("Archer","Amulet");
-        //System.out.println(player.army.archer.attack);
-        test.player.army.archer=new Soldier("Zing","Archer");
-        test.printArmy();
+        //Whitewolf is challenging you! What are you gonna do?
+        //1. Accept the challenge
+        //2. View player army
+        //3. Decline the challenge
 
+        //choose a ground you like:
+        //1. HilCrest
+        //2.
+        //3.
+        //4.
 
+        boolean challengeAccepted = test.defaultPlayer(whiteWolf);
+        String ground = test.selectHomeLand();
 
-        //System.out.println(Player.players);
-
+        Battle battleField = new Battle();
+        if (challengeAccepted){
+            battleField.Challenge(whiteWolf, player, ground);
+        }
 
     }
 }
