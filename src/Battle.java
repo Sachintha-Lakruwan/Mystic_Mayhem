@@ -171,8 +171,6 @@ public class Battle {
 
         while (army1Size > 0 && army2Size > 0 && turns < 20) {
 
-            turns++;
-
             if (terminatedSoldiersChallenger.size() == challengerArmy.length){
                 terminatedSoldiersChallenger.clear();
             }
@@ -194,11 +192,12 @@ public class Battle {
                 }
             } else {
                 accepterArmy[acceptorsIndex].health -= 0.5 * challengerArmy[challengersIndex].attack - 0.1 * accepterArmy[acceptorsIndex].defence;
-                accepterArmy = RemoveDeadSoldiers(accepterArmy);
-                army1Size = accepterArmy.length;
             }
-
+            turns++;
+            System.out.println(turns);
             showResult.showStat("sachintha", "lakruwan", challengerArmy[challengersIndex], accepterArmy[acceptorsIndex], 10, 15);
+            accepterArmy = RemoveDeadSoldiers(accepterArmy);
+            army1Size = accepterArmy.length;
 
             if (accepterArmy.length == 0) {
                 showResult.showWinner(false);
@@ -215,12 +214,14 @@ public class Battle {
                 accepterArmy[lowestAcceptorHealth].health += 0.1 * accepterArmy[acceptorsIndex].attack;
             } else {
                 challengerArmy[challengersIndex].health -= 0.5 * accepterArmy[acceptorsIndex].attack - 0.1 * challengerArmy[challengersIndex].defence;
-                challengerArmy = RemoveDeadSoldiers(challengerArmy);
-                army2Size = challengerArmy.length;
             }
-
+            
+            turns++;
+            System.out.println(turns);
             showResult.showStat("lakruwan", "sachintha", accepterArmy[acceptorsIndex],challengerArmy[challengersIndex], 15, 10);
-
+            challengerArmy = RemoveDeadSoldiers(challengerArmy);
+            army2Size = challengerArmy.length;
+            
             if (challengerArmy.length == 0) {
                 showResult.showWinner(true);
                 return;
@@ -291,6 +292,24 @@ public class Battle {
         System.arraycopy(temp, 0, result, 0, count);
 
         return result;
+    }
+
+    public static void main(String[] args) {
+        Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
+        String[] troops = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
+        whiteWolf.createArmy(troops);
+        whiteWolf.army.archer.setEquipment("Chainmail");
+        whiteWolf.army.healer.setEquipment("Amulet");
+
+        Player player = new Player("Sachintha", "Sachintha", 500, 32);
+        String[] troops1 = { "Shooter", "Squire", "Warlock", "Soother", "Dragon" };
+        player.createArmy(troops1);
+        player.army.archer.setEquipment("Chainmail");
+        player.army.healer.setEquipment("Amulet");
+
+        Battle battleField = new Battle();
+
+        battleField.Challenge(whiteWolf, player, "Desert");
     }
 
 }

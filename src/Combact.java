@@ -1,19 +1,17 @@
 public class Combact {
     GameName game=new GameName();
     public void showStat(String winner, String loser, Soldier attacker, Soldier defender, int winnerxp,int looserxp) {
-        // Print winner
-        System.out.println("Winner: " + winner);
 
         // Print attacker's attack on defender
         System.out.println(attacker.name + " attacks " + defender.name);
 
         // Print health before attack
-        System.out.println("Defence:");
-        System.out.println("+----------------+----------------+");
-        System.out.println("|    Attacker    |    Defender    |");
-        System.out.println("+----------------+----------------+");
-        System.out.printf("|%10s      |%10s      |%n", attacker.defence, defender.defence);
-        System.out.println("+----------------+----------------+");
+        // System.out.println("Defence:");
+        // System.out.println("+----------------+----------------+");
+        // System.out.println("|    Attacker    |    Defender    |");
+        // System.out.println("+----------------+----------------+");
+        // System.out.printf("|%10s      |%10s      |%n", attacker.defence, defender.defence);
+        // System.out.println("+----------------+----------------+");
 
         // Check if defender's health is zero or negative
         if (defender.health <= 0) {
@@ -27,12 +25,14 @@ public class Combact {
         System.out.println("+----------------+----------------+");
         System.out.printf("|%10s      |%10s      |%n", attacker.health, defender.health);
         System.out.println("+----------------+----------------+");
-        System.out.println("Final XP:");
-        System.out.println("+----------------+----------------+");
-        System.out.println("|    Attacker    |    Defender    |");
-        System.out.println("+----------------+----------------+");
-        System.out.printf("|%10s      |%10s      |%n", winnerxp, looserxp);
-        System.out.println("+----------------+----------------+");
+        System.out.println();
+        System.out.println();
+        // System.out.println("Final XP:");
+        // System.out.println("+----------------+----------------+");
+        // System.out.println("|    Attacker    |    Defender    |");
+        // System.out.println("+----------------+----------------+");
+        // System.out.printf("|%10s      |%10s      |%n", winnerxp, looserxp);
+        // System.out.println("+----------------+----------------+");
     }
 
 
