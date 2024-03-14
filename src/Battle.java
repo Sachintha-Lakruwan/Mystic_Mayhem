@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,16 +57,20 @@ public class Battle {
 
     }
 
+    private void UpdatePlayers(Player player, List<String> highlanders, List<String> marshlanders,
+                               List<String> sunchildren, List<String> mystics){
+        applyModifiersHilCrest(player.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(player.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(player.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(player.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
+        applyModifiersHilCrest(player.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+
+    }
+
     public void HilCrest(Player challenger, Player accepter) {
         // Apply modifiers for each soldier type
-        applyModifiersHilCrest(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersHilCrest(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersHilCrest(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersHilCrest(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersHilCrest(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
-        //
-
-
+        UpdatePlayers(challenger,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
+        UpdatePlayers(accepter,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
         Fight(challenger, accepter, "HilCrest");
     }
 
@@ -86,11 +91,8 @@ public class Battle {
 
     public void MarshLand(Player challenger, Player accepter) {
         // Apply modifiers for each soldier type
-        applyModifiersMarshLand(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersMarshLand(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersMarshLand(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersMarshLand(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersMarshLand(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+        UpdatePlayers(challenger,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
+        UpdatePlayers(accepter,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
         Fight(challenger, accepter, "MarshLand");
 
     }
@@ -112,11 +114,8 @@ public class Battle {
 
     public void Desert(Player challenger, Player accepter) {
         // Apply modifiers for each soldier type
-        applyModifiersDesert(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersDesert(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersDesert(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersDesert(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersDesert(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+        UpdatePlayers(challenger,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
+        UpdatePlayers(accepter,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
         Fight(challenger, accepter, "Desert");
 
     }
@@ -136,11 +135,8 @@ public class Battle {
         System.out.println("Battle in Arcane");
 
         // Apply modifiers for each soldier type
-        applyModifiersArcane(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersArcane(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersArcane(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersArcane(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
-        applyModifiersArcane(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+        UpdatePlayers(challenger,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
+        UpdatePlayers(accepter,  Highlanders, Marshlanders,  Sunchildren,  Mystics);
         Fight(challenger, accepter, "Arcane");
 
     }
@@ -202,6 +198,8 @@ public class Battle {
                 army1Size = accepterArmy.length;
             }
 
+            showResult.showStat("sachintha", "lakruwan", challengerArmy[challengersIndex], accepterArmy[acceptorsIndex], 10, 15);
+
             if (accepterArmy.length == 0) {
                 showResult.showWinner(false);
                 return;
@@ -221,12 +219,14 @@ public class Battle {
                 army2Size = challengerArmy.length;
             }
 
+            showResult.showStat("lakruwan", "sachintha", accepterArmy[acceptorsIndex],challengerArmy[challengersIndex], 15, 10);
+
             if (challengerArmy.length == 0) {
                 showResult.showWinner(true);
                 return;
             }
         }
-        //draw
+        System.out.println("---Match Drawn---");
     }
 
     private int FastestPlayer(Soldier[] army, ArrayList<Integer> terminated){
