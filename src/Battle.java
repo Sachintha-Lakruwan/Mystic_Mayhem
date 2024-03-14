@@ -1,20 +1,18 @@
 import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Battle {
 
     Combact showResult = new Combact();
 
     public void Challenge(Player challenger, Player accepter, String ground){
-        if (ground.equals("Desert")){
-            Desert(challenger, accepter);
-        } else if (ground.equals("MarshLand") ){
-            MarshLand(challenger, accepter);
-        } else if (ground.equals( "Hilcrest")){
-            HilCrest(challenger, accepter);
-        } else if (ground.equals( "Arcane")){
-            Arcane(challenger, accepter);
+        switch (ground) {
+            case "Desert" -> Desert(challenger, accepter);
+            case "MarshLand" -> MarshLand(challenger, accepter);
+            case "HilCrest" -> HilCrest(challenger, accepter);
+            case "Arcane" -> Arcane(challenger, accepter);
         }
     }
 
@@ -86,7 +84,7 @@ public class Battle {
         applyModifiersHilCrest(accepter.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersHilCrest(accepter.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
 
-        Fight(challenger, accepter, "HilCrest");
+        Fight(challenger, accepter, "Hilcrest");
     }
 
     private void applyModifiersHilCrest(Soldier soldier, List<String> highlanders, List<String> marshlanders,
@@ -145,8 +143,7 @@ public class Battle {
     }
 
     public void Desert(Player challenger, Player accepter) {
-        // Apply modifiers for each soldier type
-        System.out.println("llllllllllllllllllllllllllllllllllllllllllllllll");
+
         applyModifiersDesert(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
@@ -235,8 +232,6 @@ public class Battle {
 
         while (army1Size > 0 && army2Size > 0 && turns < 20) {
 
-            turns++;
-
             if (terminatedSoldiersChallenger.size() == challengerArmy.length){
                 terminatedSoldiersChallenger.clear();
             }
@@ -250,18 +245,23 @@ public class Battle {
             challengersIndex = FastestPlayer(challengerArmy, terminatedSoldiersAcceptor);
             terminatedSoldiersChallenger.add(challengersIndex);
 
-            if (challengerArmy[challengersIndex].category == "Healer"){
+            if (Objects.equals(challengerArmy[challengersIndex].category, "Healer")){
                 int lowestChallengerHealth = LowestHealth(challengerArmy);
                 challengerArmy[lowestChallengerHealth].health += 0.1 * challengerArmy[challengersIndex].attack;
-                if (ground == "Arcane"){
-
-                }
+//                if (Objects.equals(ground, "Arcane")){
+//
+//                }
             } else {
                 accepterArmy[acceptorsIndex].health -= 0.5 * challengerArmy[challengersIndex].attack - 0.1 * accepterArmy[acceptorsIndex].defence;
 
             }
 
-            showResult.showStat("sachintha", "lakruwan", challengerArmy[challengersIndex], accepterArmy[acceptorsIndex], 10, 15);
+
+            turns++;
+            System.out.println("Turn no--"+turns);
+            showResult.showStat(challenger.name, challengerArmy[challengersIndex], accepterArmy[acceptorsIndex]);
+            //any key
+
             accepterArmy = RemoveDeadSoldiers(accepterArmy);
             army1Size = accepterArmy.length;
 
@@ -282,6 +282,13 @@ public class Battle {
                 challengerArmy[challengersIndex].health -= 0.5 * accepterArmy[acceptorsIndex].attack - 0.1 * challengerArmy[challengersIndex].defence;
 
             }
+            turns++;
+            System.out.println(turns);
+            showResult.showStat(accepter.name, accepterArmy[acceptorsIndex],challengerArmy[challengersIndex]);
+            //any key
+
+            challengerArmy = RemoveDeadSoldiers(challengerArmy);
+            army2Size = challengerArmy.length;
 
             showResult.showStat("lakruwan", "sachintha", accepterArmy[acceptorsIndex],challengerArmy[challengersIndex], 15, 10);
             challengerArmy = RemoveDeadSoldiers(challengerArmy);
@@ -292,7 +299,9 @@ public class Battle {
                 return;
             }
         }
-        System.out.println("---Match Drawn---");
+      
+        showResult.drawBattle();
+
     }
 
     private int FastestPlayer(Soldier[] army, ArrayList<Integer> terminated){
@@ -358,4 +367,6 @@ public class Battle {
 
         return result;
     }
+
 }
+

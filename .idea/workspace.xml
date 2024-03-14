@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Blinking animations added">
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="ATTTTTTMA IWRI(2)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -83,6 +81,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Battle.executor": "Run",
     "Application.Combact.executor": "Run",
     "Application.DataBase.executor": "Run",
     "Application.Equipment.executor": "Run",
@@ -94,7 +93,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Haitha-new",
+    "git-widget-placeholder": "Hasitha-Last-Stage",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -215,7 +214,39 @@
       <option name="project" value="LOCAL" />
       <updated>1710373940957</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Challenge part interface done">
+      <option name="closed" value="true" />
+      <created>1710419314688</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710419314688</updated>
+    </task>
+    <task id="LOCAL-00014" summary="iwarai">
+      <option name="closed" value="true" />
+      <created>1710423007496</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710423007497</updated>
+    </task>
+    <task id="LOCAL-00015" summary="attma iwri">
+      <option name="closed" value="true" />
+      <created>1710429948777</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1710429948777</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ATTTTTTMA IWRI(2)">
+      <option name="closed" value="true" />
+      <created>1710431581608</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1710431581608</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,6 +329,21 @@
     <MESSAGE value="interface class doyouwantbuy function created and getEquipmentDataList() created in database class and buyEquipment method updated in player class" />
     <MESSAGE value="color added" />
     <MESSAGE value="Blinking animations added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blinking animations added" />
+    <MESSAGE value="Challenge part interface done" />
+    <MESSAGE value="iwarai" />
+    <MESSAGE value="attma iwri" />
+    <MESSAGE value="ATTTTTTMA IWRI(2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ATTTTTTMA IWRI(2)" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Soldier.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
