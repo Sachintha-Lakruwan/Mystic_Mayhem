@@ -57,6 +57,11 @@ public class Battle {
 
     }
 
+//    private void UpdatePlayers(Player player, List<String> highlanders, List<String> marshlanders,
+//                               List<String> sunchildren, List<String> mystics){
+//
+//    }
+
     public void HilCrest(Player challenger, Player accepter) {
         // Apply modifiers for each soldier type
         applyModifiersHilCrest(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
@@ -200,6 +205,7 @@ public class Battle {
                 army1Size = accepterArmy.length;
             }
 
+            showResult.showStat("sachintha", "lakruwan", challengerArmy[challengersIndex], accepterArmy[acceptorsIndex], 10, 15);
 
             if (accepterArmy.length == 0) {
                 showResult.showWinner(false);
@@ -219,6 +225,8 @@ public class Battle {
                 challengerArmy = RemoveDeadSoldiers(challengerArmy);
                 army2Size = challengerArmy.length;
             }
+
+            showResult.showStat("lakruwan", "sachintha", accepterArmy[acceptorsIndex],challengerArmy[challengersIndex], 15, 10);
 
             if (challengerArmy.length == 0) {
                 showResult.showWinner(true);

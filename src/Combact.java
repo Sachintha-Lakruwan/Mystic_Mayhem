@@ -35,8 +35,6 @@ public class Combact {
         System.out.println("+----------------+----------------+");
     }
 
-
-
     public void showWinner(boolean winner) {
         if (winner) {
             String wonstate=

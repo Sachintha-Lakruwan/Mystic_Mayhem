@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="color added">
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="comments added in main file">
+      <change beforePath="$PROJECT_DIR$/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Combact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Combact.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,7 +115,7 @@
       <workItem from="1709973503663" duration="2116000" />
       <workItem from="1710009423421" duration="11574000" />
       <workItem from="1710301407846" duration="38183000" />
-      <workItem from="1710398804325" duration="969000" />
+      <workItem from="1710398804325" duration="2342000" />
     </task>
     <task id="LOCAL-00001" summary="initial files">
       <option name="closed" value="true" />
@@ -204,7 +205,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710373239631</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="comments added in main file">
+      <option name="closed" value="true" />
+      <created>1710400272436</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1710400272436</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -286,6 +295,7 @@
     <MESSAGE value="Merge pull request #15 from Sachintha-Lakruwan/sachintha---battle&#10;&#10;Interface Added" />
     <MESSAGE value="interface class doyouwantbuy function created and getEquipmentDataList() created in database class and buyEquipment method updated in player class" />
     <MESSAGE value="color added" />
-    <option name="LAST_COMMIT_MESSAGE" value="color added" />
+    <MESSAGE value="comments added in main file" />
+    <option name="LAST_COMMIT_MESSAGE" value="comments added in main file" />
   </component>
 </project>
