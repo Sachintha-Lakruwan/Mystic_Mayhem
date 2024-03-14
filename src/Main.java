@@ -7,8 +7,8 @@ public class Main {
         Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
         String[] troops = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
         whiteWolf.createArmy(troops);
-        whiteWolf.army.archer.setEquipment("Chainmail");
-        whiteWolf.army.healer.setEquipment("Amulet");
+        //whiteWolf.army.archer.setEquipment("Chainmail");
+        //dfdwhiteWolf.army.healer.setEquipment("Amulet");
 
         Interface test=new Interface();
 

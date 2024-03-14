@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Blinking animations added">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2024_1_11_AM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2024_1_11_AM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2024_1_11_AM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_14_2024_1_11_AM__Changes_1.xml" afterDir="false" />
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Challenge part interface done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Combact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Combact.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataBase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GameName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +83,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Battle.executor": "Run",
     "Application.Combact.executor": "Run",
     "Application.DataBase.executor": "Run",
     "Application.Equipment.executor": "Run",
@@ -220,7 +216,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710373940957</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Challenge part interface done">
+      <option name="closed" value="true" />
+      <created>1710419314688</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1710419314688</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,6 +307,7 @@
     <MESSAGE value="interface class doyouwantbuy function created and getEquipmentDataList() created in database class and buyEquipment method updated in player class" />
     <MESSAGE value="color added" />
     <MESSAGE value="Blinking animations added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blinking animations added" />
+    <MESSAGE value="Challenge part interface done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Challenge part interface done" />
   </component>
 </project>

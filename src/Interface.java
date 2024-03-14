@@ -287,6 +287,7 @@ public class Interface extends GameName {
         }
         else if(selectedHomeLand==3){
             setSelectedHomeGround="HilCrest";
+            System.out.println("dfsdfsdfsdfsf");
         }
         else{
             setSelectedHomeGround="Arcane";
