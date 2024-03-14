@@ -21,7 +21,7 @@ public class Interface extends GameName {
 
         // Animation: Printing each line with a slight delay
         animatePrint("-----------------------------",ANSI_RED);
-        animatePrint("Enter your Username:",ANSI_YELLOW);
+        animatePrint("Enter your Username: ",ANSI_YELLOW);
 
         String name = scanner.nextLine();
 
