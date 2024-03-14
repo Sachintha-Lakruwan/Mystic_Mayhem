@@ -513,13 +513,13 @@ public class Interface extends GameName {
 
         String[] troops1 = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
         whiteWolf.createArmy(troops1);
-        Player code_x = new Player("GeraltofRivia", "whitewolf", 215, 32);
+        Player code_x = new Player("code-x", "code-x", 200, 32);
 
         String[] troops2 = { "Zing", "Zoro", "Conjurer", "Saint", "Phoenix" };
         code_x.createArmy(troops2);
         animatePrintFast("Select Your Challenger??",ANSI_GREEN);
         Player challenger=null;
-        System.out.println("-----------Player Details------------");
+        blinkText("-----------Enemie's Details------------",2,300,ANSI_YELLOW);
         printArmy(whiteWolf);
         printArmy(code_x);
         System.out.println("Select a Player:");
@@ -539,25 +539,54 @@ public class Interface extends GameName {
         return challenger;
 
     }
+    public void sellSoldiers(Player player) {
+        Scanner x=new Scanner(System.in);
+        blinkText("Do you want Sell Soldiers?(y/n)???????",3,300,ANSI_GREEN);
+        String state=x.nextLine();
+        if(state.equals("y")){
+        // Display available soldiers and their indices
+        showSoldiers();
+        System.out.print("Enter the index of the soldier you want to sell: ");
+        int inputSoldier = x.nextInt();
 
-public static void main(String Args[]){
-        Interface k=new Interface();
-    Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
-
-    String[] troops = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
-    whiteWolf.createArmy(troops);
-    whiteWolf.army.archer.setEquipment("Chainmail");
-    whiteWolf.army.healer.setEquipment("Amulet");
-    DataBase db=new DataBase();
-   /*k.doYouWantBuyEquipment(whiteWolf);
-     k.showSoldiers();*/
-
-    boolean L= k.defaultPlayer(whiteWolf);
-    String h=k.selectHomeLand() ;
-    System.out.println(h);
+        // Check which soldier is selected and call the corresponding sell function
+        switch (inputSoldier) {
+            case 1:
+                player.sellArcher();
+                createArmy(player);
 
 
-}
+                break;
+            case 2:
+                player.sellKnight();
+                createArmy(player);
+                break;
+            case 3:
+                player.sellMage();
+                createArmy(player);
+                break;
+            case 4:
+                player.sellHealer();
+                createArmy(player);
+                break;
+            case 5:
+                player.sellMythicalCreature();
+                createArmy(player);
+                break;
+            default:
+                System.out.println("Invalid choice!");
+                sellSoldiers(player);
+        }
+
+    }
+        else{
+            System.out.println("Continue Your Battle");
+        }
+
+    }
+
+
+
 
 }
 
