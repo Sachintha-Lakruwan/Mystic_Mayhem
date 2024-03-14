@@ -39,7 +39,7 @@ public class Player {
     public Player(String name, String username) {
 
         if (isUsernameTaken(username)) {
-            System.out.println("Username '" + username + "' is already taken. Please choose another username.");
+            game.animatePrint("Username '" + username + "' is already taken. Please choose another username.",GameName.ANSI_BLINK);
             // Handle the case where the username already exists, you can throw an exception
             // or handle it accordingly.
         } else {
@@ -56,7 +56,7 @@ public class Player {
         // this.players = new ArrayList<>();
 
         if (isUsernameTaken(username)) {
-            System.out.println("Username '" + username + "' is already taken. Please choose another username.");
+            game.animatePrint("Username '" + username + "' is already taken. Please choose another username.",GameName.ANSI_BLINK);
 
         } else {
             this.username = username;
@@ -139,7 +139,7 @@ public class Player {
         Soldier Obj3 = new Soldier( "Mage",name);
 
         if (gold < Obj3.price) {
-            System.out.println("Insufficient gold to buy an Mage.");
+            game.animatePrint("OOPS!!!--Insufficient gold to buy an Mage.Recreate the Army",game.ANSI_RED);
             return false;
         } else {
             this.gold -= Obj3.price;
@@ -167,7 +167,7 @@ public class Player {
         Soldier Obj4 = new Soldier( "Healer",name);
 
         if (gold < Obj4.price) {
-            game.animatePrint("OOPS!!!--Insufficient gold to buy an Archer.Recreate the Army",game.ANSI_RED);
+            game.animatePrint("OOPS!!!--Insufficient gold to buy an Healer.Recreate the Army",game.ANSI_RED);
             return false;
         } else {
             this.gold -= Obj4.price;
@@ -232,52 +232,31 @@ public class Player {
             if (soldier == "Archer") {
 
                 this.army.archer.setEquipment(equipment);
-                this.army.archer.price += data[0];
-                this.army.archer.attack += data[1];
-                this.army.archer.defence += data[2];
-                this.army.archer.health += data[3];
-                this.army.archer.speed += data[4];
 
             }
 
             if (soldier == "Knight") {
 
                 this.army.knight.setEquipment(equipment);
-                this.army.knight.price += data[0];
-                this.army.knight.attack += data[1];
-                this.army.knight.defence += data[2];
-                this.army.knight.health += data[3];
-                this.army.knight.speed += data[4];
+
             }
 
             if (soldier == "Mage") {
 
                 this.army.mage.setEquipment(equipment);
-                this.army.mage.price += data[0];
-                this.army.mage.attack += data[1];
-                this.army.mage.defence += data[2];
-                this.army.mage.health += data[3];
-                this.army.mage.speed += data[4];
+
             }
 
             if (soldier == "Healer") {
 
                 this.army.healer.setEquipment(equipment);
-                this.army.healer.price += data[0];
-                this.army.healer.attack += data[1];
-                this.army.healer.defence += data[2];
-                this.army.healer.health += data[3];
-                this.army.healer.speed += data[4];
+
             }
 
             if (soldier == "Mythical") {
 
                 this.army.mythical.setEquipment(equipment);
-                this.army.mythical.price += data[0];
-                this.army.mythical.attack += data[1];
-                this.army.mythical.defence += data[2];
-                this.army.mythical.health += data[3];
-                this.army.mythical.speed += data[4];
+
             }
         }
     }

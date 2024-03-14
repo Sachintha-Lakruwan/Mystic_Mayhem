@@ -7,6 +7,7 @@ public class GameName {
     public static final String ANSI_BLUE = "\u001B[34m";
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_BLINK = "\u001B[5m";
     public void animatePrint(String text, String color) {
         System.out.print(color);
         for (char c : text.toCharArray()) {
@@ -34,6 +35,22 @@ public class GameName {
         System.out.println();
     }
 
+    public static void blinkText(String text, int repeat, int durationMillis, String color) {
+        try {
+            for (int i = 0; i < repeat; i++) {
+                System.out.print(ANSI_BLINK + color + text + ANSI_RESET + "\r"); // Blinking text
+                Thread.sleep(durationMillis);
+                System.out.print(" ".repeat(text.length()) + "\r"); // Erase the text
+                Thread.sleep(durationMillis);
+            }
+            // Print the text without blinking after the blinking effect finishes
+            System.out.println(color + text + ANSI_RESET);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void gameStart() {
 
         String ANSI_LIGHT_BLUE = "\u001B[94m";
@@ -47,9 +64,10 @@ public class GameName {
                 "                                                                                                   \n" +
                 "\n";
         //System.out.println( ANSI_LIGHT_BLUE+k);
-        animatePrint(k,ANSI_BLUE);
-        animatePrintSlow("                               ................................LET'S Play...................................",ANSI_RED);
 
+        animatePrint(k,ANSI_BLUE);
+        //animatePrintSlow("                               ................................LET'S Play...................................",ANSI_RED);
+blinkText("                              ................................LET'S Play...................................",5,500,ANSI_RED);
     }
 
 
@@ -58,15 +76,3 @@ public class GameName {
 
 
 
- /*System.out.println(
-                "\n" +
-                ANSI_LIGHT_BLUE +
-                        " ╔███╗   █████╗   ███████████████████╗██████╗    ███╗   ███╗█████╗██╗   ████╗  ████████████╗   ███╗\n" +
-                        " ║████╗ ████╚██╗ ██╔██╔════╚══██╔══████╔════╝    ████╗ ██████╔══██╚██╗ ██╔██║  ████╔════████╗ ████║\n" +
-                        " ║██╔████╔██║╚████╔╝███████╗  ██║  ████║         ██╔████╔█████████║╚████╔╝████████████╗ ██╔████╔██║\n" +
-                        " ║██║╚██╔╝██║ ╚██╔╝ ╚════██║  ██║  ████║         ██║╚██╔╝████╔══██║ ╚██╔╝ ██╔══████╔══╝ ██║╚██╔╝██║\n" +
-                        " ║██║ ╚═╝ ██║  ██║  ███████║  ██║  ██╚██████╗    ██║ ╚═╝ ████║  ██║  ██║  ██║  ███████████║ ╚═╝ ██║\n" +
-                        "  ╚═╝     ╚═╝  ╚═╝  ╚══════╝  ╚═╝  ╚═╝╚═════╝    ╚═╝     ╚═╚═╝  ╚═╝  ╚═╝  ╚═╝  ╚═╚══════╚═╝     ╚═╝\n" +
-                        "                                                                                                   \n" +
-                        "\u001B[0m" // Reset ANSI color
-);*/

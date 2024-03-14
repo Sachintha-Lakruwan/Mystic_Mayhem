@@ -1,6 +1,8 @@
+import java.sql.SQLOutput;
+import java.util.List;
 import java.util.Scanner;
 
-public class Interface {
+public class Interface extends GameName {
     //Colors
     public static final String ANSI_RESET = "\u001B[0m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -15,18 +17,20 @@ public class Interface {
     public int registerPlayer() {
         int k = 0;
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Welcome to the Username Registration Interface");
+        animatePrintFast("Welcome to the Username Registration Interface",ANSI_YELLOW);
 
         // Animation: Printing each line with a slight delay
         animatePrint("-----------------------------",ANSI_RED);
-        animatePrint("Enter Your Name: ",ANSI_GREEN);
+        animatePrint("Enter your Username:",ANSI_YELLOW);
+
         String name = scanner.nextLine();
-        animatePrint("Enter a Unique Username: ",ANSI_GREEN);
+
+        animatePrint("Enter a Unique Username:",ANSI_YELLOW);
         String username = scanner.nextLine();
 
         if (!Player.players.contains(username)) {
             this.player = new Player(name, username); // Creating a new Player object
-            System.out.println("Username '" + username + "' is available.");
+            blinkText("Registation Successfull!!!!!!",5,400,ANSI_GREEN);
             k = 1;
         } else {
             System.out.println("Sorry, the username '" + username + "' is already taken. Please choose another.");
@@ -35,7 +39,7 @@ public class Interface {
     }
 
     // Method to print text with a slight delay
-    private void animatePrint(String text, String color) {
+    public void animatePrint(String text, String color) {
         System.out.print(color);
         for (char c : text.toCharArray()) {
             System.out.print(c);
@@ -65,168 +69,175 @@ public class Interface {
     public static String padRight(String s, int n) {
         return String.format("%-" + n + "s", s);
     }
-    public void createArmy(Player player){
+    public void createArmy(Player player) {
 
 
+        Scanner x = new Scanner(System.in);
+        try {
+            while (true) {
 
 
-
-        Scanner x=new Scanner(System.in);
-        while(true) {
+                db.getCategoryData("Archer");
 
 
-            db.getCategoryData("Archer");
+                animatePrint("Select Your Archer....(Give index)", ANSI_GREEN);
+                boolean res = false;
+
+                int archer = x.nextInt();
+                if (archer == 1) {
+                    res = player.buyArcher("Shooter");
+
+                } else if (archer == 2) {
+                    res = player.buyArcher("Ranger");
+                } else if (archer == 3) {
+                    res = player.buyArcher("Sunfire");
+                } else if (archer == 4) {
+                    res = player.buyArcher("Zing");
+
+                } else if (archer == 5) {
+                    res = player.buyArcher("Saggitarius");
+
+                } else {
+                    animatePrint("Invalid index. Please enter a valid index.Recreate Army", ANSI_RED);
+                    res = false;
+
+                }
+                if (!res) {
+                    player.gold = 500;
+                    player.army = null;
+                    createArmy(player);
+                    break;
+                }
 
 
-            animatePrint("Select Your Archer....(Give index)",ANSI_GREEN);
-            boolean res = false;
+                db.getCategoryData("Knight");
+                animatePrint("Select Your Knight....(Give index)", ANSI_GREEN);
 
-            int archer = x.nextInt();
-            if (archer == 1) {
-                res = player.buyArcher("Shooter");
 
-            } else if (archer == 2) {
-                res = player.buyArcher("Ranger");
-            } else if (archer == 3) {
-                res = player.buyArcher("Sunfire");
-            } else if (archer == 4) {
-                res = player.buyArcher("Zing");
+                int knight = x.nextInt();
+                if (knight == 1) {
+                    res = player.buyKnight("Squire");
+                } else if (knight == 2) {
+                    res = player.buyKnight("Cavalier");
+                } else if (knight == 3) {
+                    res = player.buyKnight("Templar");
+                } else if (knight == 4) {
+                    res = player.buyKnight("Zoro");
+                } else if (knight == 5) {
+                    res = player.buyKnight("Swiftblade");
+                } else {
+                    animatePrint("Invalid index. Please enter a valid index.Recreate Army", ANSI_RED);
 
-            } else if (archer == 5) {
-                res = player.buyArcher("Saggitarius");
+                    res = false;
+                }
+                if (!res) {
+                    player.gold = 500;
+                    player.army = null;
+                    createArmy(player);
 
-            } else {
-                animatePrint("Invalid index. Please enter a valid index.Recreate Army",ANSI_RED);
-                res = false;
+                    break;
+
+                }
+
+
+                db.getCategoryData("Mage");
+                animatePrint("Select Your Mage....(Give index)", ANSI_GREEN);
+                int mage = x.nextInt();
+                if (mage == 1) {
+                    res = player.buyMage("Warlock");
+                } else if (mage == 2) {
+                    res = player.buyMage("Illusionist");
+                } else if (mage == 3) {
+                    res = player.buyMage("Enchanter");
+                } else if (mage == 4) {
+                    res = player.buyMage("Conjurer");
+                } else if (mage == 5) {
+                    res = player.buyMage("Eldritch");
+                } else {
+                    animatePrint("Invalid index. Please enter a valid index.Recreate Army", ANSI_RED);
+                    res = false;
+                }
+                if (!res) {
+                    player.gold = 500;
+                    player.army = null;
+                    createArmy(player);
+
+                    break;
+
+                }
+
+                db.getCategoryData("Healer");
+                animatePrint("Select Your Healer....(Give index)", ANSI_GREEN);
+                int healer = x.nextInt();
+                if (healer == 1) {
+                    res = player.buyHealer("Soother");
+                } else if (healer == 2) {
+                    res = player.buyHealer("Medic");
+                } else if (healer == 3) {
+                    res = player.buyHealer("Alchemist");
+
+                } else if (healer == 4) {
+                    res = player.buyHealer("Saint");
+                } else if (healer == 5) {
+                    res = player.buyHealer("Lightbringer");
+                } else {
+
+                    animatePrint("Invalid index. Please enter a valid index.Recreate Army", ANSI_RED);
+                    res = false;
+                }
+                if (!res) {
+                    player.gold = 500;
+                    player.army = null;
+                    createArmy(player);
+
+                    break;
+
+                }
+
+                db.getCategoryData("Mythical");
+                animatePrint("Select Your Mythical....(Give index)", ANSI_GREEN);
+                int mythical = x.nextInt();
+                if (mythical == 1) {
+                    res = player.buyMythicalCreature("Dragon");
+                } else if (mythical == 2) {
+                    res = player.buyMythicalCreature("Basilisk");
+                } else if (mythical == 3) {
+                    res = player.buyMythicalCreature("Hydra");
+                } else if (mythical == 4) {
+                    res = player.buyMythicalCreature("Phoenix");
+                } else if (mythical == 5) {
+                    res = player.buyMythicalCreature("Pegasus");
+                } else {
+                    animatePrint("Invalid index. Please enter a valid index.Recreate Army", ANSI_RED);
+                    res = false;
+                }
+                if (!res) {
+                    player.gold = 500;
+                    player.army = null;
+                    createArmy(player);
+
+                    break;
+
+                } else {
+                    break;
+                }
 
             }
-            if (!res) {
-                player.gold = 500;
-                player.army = null;
-                createArmy(player);
-                break;
-            }
 
 
-            db.getCategoryData("Knight");
-            animatePrint("Select Your Knight....(Give index)",ANSI_GREEN);
-
-
-            int knight = x.nextInt();
-            if (knight == 1) {
-                res = player.buyKnight("Squire");
-            } else if (knight == 2) {
-                res = player.buyKnight("Cavalier");
-            } else if (knight == 3) {
-                res = player.buyKnight("Templar");
-            } else if (knight == 4) {
-                res = player.buyKnight("Zoro");
-            } else if (knight == 5) {
-                res = player.buyKnight("Swiftblade");
-            } else {
-                animatePrint("Invalid index. Please enter a valid index.Recreate Army",ANSI_RED);
-
-                res = false;
-            }
-            if (!res) {
-                player.gold = 500;
-                player.army = null;
-                createArmy(player);
-
-                break;
-
-            }
-
-
-            db.getCategoryData("Mage");
-            animatePrint("Select Your Mage....(Give index)",ANSI_GREEN);
-            int mage = x.nextInt();
-            if (mage == 1) {
-                res = player.buyMage("Warlock");
-            } else if (mage == 2) {
-                res = player.buyMage("Illusionist");
-            } else if (mage == 3) {
-                res = player.buyMage("Enchanter");
-            } else if (mage == 4) {
-                res = player.buyMage("Conjurer");
-            } else if (mage == 5) {
-                res = player.buyMage("Eldritch");
-            } else {
-                animatePrint("Invalid index. Please enter a valid index.Recreate Army",ANSI_RED);
-                res = false;
-            }
-            if (!res) {
-                player.gold = 500;
-                player.army = null;
-                createArmy(player);
-
-                break;
-
-            }
-
-            db.getCategoryData("Healer");
-            animatePrint("Select Your Healer....(Give index)",ANSI_GREEN);
-            int healer = x.nextInt();
-            if (healer == 1) {
-                res = player.buyHealer("Soother");
-            } else if (healer == 2) {
-                res = player.buyHealer("Medic");
-            } else if (healer == 3) {
-                res = player.buyHealer("Alchemist");
-
-            } else if (healer == 4) {
-                res = player.buyHealer("Saint");
-            } else if (healer == 5) {
-                res = player.buyHealer("Lightbringer");
-            } else {
-
-                animatePrint("Invalid index. Please enter a valid index.Recreate Army",ANSI_RED);
-                res = false;
-            }
-            if (!res) {
-                player.gold = 500;
-                player.army = null;
-                createArmy(player);
-
-                break;
-
-            }
-
-            db.getCategoryData("Mythical");
-            animatePrint("Select Your Mythical....(Give index)",ANSI_GREEN);
-            int mythical = x.nextInt();
-            if (mythical == 1) {
-                res = player.buyMythicalCreature("Dragon");
-            } else if (mythical == 2) {
-                res = player.buyMythicalCreature("Basilisk");
-            } else if (mythical == 3) {
-                res = player.buyMythicalCreature("Hydra");
-            } else if (mythical == 4) {
-                res = player.buyMythicalCreature("Phoenix");
-            } else if (mythical == 5) {
-                res = player.buyMythicalCreature("Pegasus");
-            } else {
-                animatePrint("Invalid index. Please enter a valid index.Recreate Army",ANSI_RED);
-                res = false;
-            }
-            if (!res) {
-                player.gold = 500;
-                player.army = null;
-                createArmy(player);
-
-                break;
-
-            }
-            else{
-                break;
-            }
+    } catch (Exception e) {
+        animatePrint("An error occurred ReCreate the Army ",ANSI_RED );
+        // Reset player's gold and army
+        player.gold = 500;
+        player.army = null;
+        // Recursively call createArmy(player)
+        createArmy(player);
 
         }
-
-
     }
+
     public void printArmy(){
-        animatePrintFast("Creating Your Army..........",ANSI_PURPLE);
+        blinkText("Creating Your Army..........",5,500,ANSI_PURPLE);
 
         System.out.println();
 
@@ -245,7 +256,203 @@ public class Interface {
         animatePrintFast("│   Mythical    │ " + padRight(player.army.mythical.name, 25) + " │", ANSI_RED);
         animatePrintFast("└───────────────┴───────────────────────────┘", ANSI_GREEN);
     }
+    public void doYouWantBuyEquipment(Player player){
+        Scanner x=new Scanner(System.in);
+        blinkText("Do you want buy Equipment(y/n)???????",3,300,ANSI_GREEN);
+        String state=x.nextLine();
+        if(state.equals("y")){
 
+
+
+        blinkText("Available Gold Coins----"+player.gold,2,500,ANSI_BLUE);
+        db.getEquipmentDataList();
+
+        System.out.print("Enter the index of the Equipment: ");
+
+        int inputEquipment = x.nextInt();
+        showSoldiers();
+
+        System.out.print("Enter the index of the soldier: ");
+        int inputSoldier = x.nextInt();
+
+        // Get the name of the soldier corresponding to the input index
+        String selectedSoldier = null;
+        String selectedEquipment;
+        if (inputEquipment ==1) {
+            selectedEquipment = "Chainmail";
+            switch (inputSoldier) {
+                case 1:
+                    selectedSoldier = "Archer";
+                    break;
+                case 2:
+                    selectedSoldier = "Knight";
+                    break;
+                case 3:
+                    selectedSoldier = "Mage";
+                    break;
+                case 4:
+                    selectedSoldier = "Healer";
+                    break;
+                case 5:
+                    selectedSoldier = "Mythical";
+                    break;
+            }
+            System.out.println("You selected: " + selectedSoldier);
+            System.out.println("You selected: " + selectedEquipment);
+
+
+        }
+        else if (inputEquipment ==2) {
+            selectedEquipment = "Excalibur";
+            switch (inputSoldier) {
+                case 1:
+                    selectedSoldier = "Archer";
+                    break;
+                case 2:
+                    selectedSoldier = "Knight";
+                    break;
+                case 3:
+                    selectedSoldier = "Mage";
+                    break;
+                case 4:
+                    selectedSoldier = "Healer";
+                    break;
+                case 5:
+                    selectedSoldier = "Mythical";
+                    break;
+            }
+            System.out.println("You selected: " + selectedSoldier);
+            System.out.println("You selected: " + selectedEquipment);
+        }
+        else if (inputEquipment ==3) {
+            selectedEquipment = "Regalia";
+            switch (inputSoldier) {
+                case 1:
+                    selectedSoldier = "Archer";
+                    break;
+                case 2:
+                    selectedSoldier = "Knight";
+                    break;
+                case 3:
+                    selectedSoldier = "Mage";
+                    break;
+                case 4:
+                    selectedSoldier = "Healer";
+                    break;
+                case 5:
+                    selectedSoldier = "Mythical";
+                    break;
+            }
+            System.out.println("You selected: " + selectedSoldier);
+            System.out.println("You selected: " + selectedEquipment);
+        }
+        else if (inputEquipment ==4) {
+            selectedEquipment = "Amulet";
+            switch (inputSoldier) {
+                case 1:
+                    selectedSoldier = "Archer";
+                    break;
+                case 2:
+                    selectedSoldier = "Knight";
+                    break;
+                case 3:
+                    selectedSoldier = "Mage";
+                    break;
+                case 4:
+                    selectedSoldier = "Healer";
+                    break;
+                case 5:
+                    selectedSoldier = "Mythical";
+                    break;
+            }
+            System.out.println("You selected: " + selectedSoldier);
+            System.out.println("You selected: " + selectedEquipment);
+        }
+        else if (inputEquipment ==5) {
+            selectedEquipment = "Fleece";
+            switch (inputSoldier) {
+                case 1:
+                    selectedSoldier = "Archer";
+                    break;
+                case 2:
+                    selectedSoldier = "Knight";
+                    break;
+                case 3:
+                    selectedSoldier = "Mage";
+                    break;
+                case 4:
+                    selectedSoldier = "Healer";
+                    break;
+                case 5:
+                    selectedSoldier = "Mythical";
+                    break;
+            }
+            System.out.println("You selected: " + selectedSoldier);
+            System.out.println("You selected: " + selectedEquipment);
+        }
+        else{
+            selectedEquipment = "Crystal";
+            switch (inputSoldier) {
+                case 1:
+                    selectedSoldier = "Archer";
+                    break;
+                case 2:
+                    selectedSoldier = "Knight";
+                    break;
+                case 3:
+                    selectedSoldier = "Mage";
+                    break;
+                case 4:
+                    selectedSoldier = "Healer";
+                    break;
+                case 5:
+                    selectedSoldier = "Mythical";
+                    break;
+            }
+            System.out.println("You selected: " + selectedSoldier);
+            System.out.println("You selected: " + selectedEquipment);
+        }
+        player.buyEquipment(selectedSoldier,selectedEquipment);
+        System.out.println(player.army.archer.attack);}
+        else{
+            System.out.println("Continue Your Battle");
+        }
+
+
+
+    }
+    public void showSoldiers(){
+        System.out.println("What is the soldier you add Equipments:");
+        System.out.println("Index  Name");
+        int index = 1; // Start index from 1
+        String [] category={"Archer","Knight","Mage","Healer","Mythical"};
+        for (String x :category) {
+
+            // Print index and name
+            System.out.printf("%-6d %-13s%n", index, x);
+            index++; // Increment index by 1
+        }
+    }
+    public static void selectHomeland(){
+        //complete the function
+
+    }
+    public static void selectPlayer(){
+        //complete the function
+    }
+public static void main(String Args[]){
+        Interface k=new Interface();
+    Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
+
+    String[] troops = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
+    whiteWolf.createArmy(troops);
+    whiteWolf.army.archer.setEquipment("Chainmail");
+    whiteWolf.army.healer.setEquipment("Amulet");
+    DataBase db=new DataBase();
+   k.doYouWantBuyEquipment(whiteWolf);
+     k.showSoldiers();
+
+}
 
 }
 

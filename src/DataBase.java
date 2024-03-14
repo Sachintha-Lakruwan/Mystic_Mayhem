@@ -104,6 +104,31 @@ public class DataBase {
         }
 
     }
+    public void getEquipmentDataList() {
+        System.out.println("Equipment in category: " );
+        System.out.println("Index  Name          Price      Attack    Defence   Health    Speed");
+        int index = 1; // Start index from 1
+        for (List<Object> equipment : equipmentList) {
+            String equipmentCategory = (String) equipment.get(0); // Get the category of the equipment (in this case, the name)
+
+                // If the equipment belongs to the given category, print its data
+                String name = (String) equipment.get(0);
+                int price = (int) equipment.get(1);
+                int attack = (int) equipment.get(2);
+                int defence = (int) equipment.get(3);
+                int health = (int) equipment.get(4);
+                int speed = (int) equipment.get(5);
+
+                // Print equipment data with index
+                System.out.printf("%-6d %-13s %-10d %-10d %-10d %-10d %-10d%n", index, name, price, attack, defence, health, speed);
+                index++; // Increment index by 1
+
+        }
 
 
+    }
+    public static void main(String args[]){
+        DataBase db=new DataBase();
+        db.getEquipmentDataList();
+    }
 }
