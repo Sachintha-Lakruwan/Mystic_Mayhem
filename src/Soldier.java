@@ -30,9 +30,10 @@ public class Soldier {
 
         this.equipment = new Equipment(equipmentName);
         this.attack = this.attack + this.equipment.attack;
-        this.price = this.equipment.price;
+        this.price = this.price+(this.equipment.price*20)/100;
         this.defence = this.defence + this.equipment.defence;
         this.health = this.health + this.equipment.health;
         this.speed = this.speed + this.equipment.speed;
     }
+
 }
