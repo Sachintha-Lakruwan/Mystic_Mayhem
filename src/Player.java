@@ -43,6 +43,7 @@ public class Player {
             // Handle the case where the username already exists, you can throw an exception
             // or handle it accordingly.
         } else {
+            this.name = name;
             this.username = username;
             this.id = generateUniqueId();
             this.gold = 500;
@@ -59,6 +60,7 @@ public class Player {
             game.animatePrint("Username '" + username + "' is already taken. Please choose another username.",GameName.ANSI_BLINK);
 
         } else {
+            this.name = name;
             this.username = username;
             this.id = generateUniqueId();
             this.gold = 500;
