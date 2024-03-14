@@ -1,6 +1,6 @@
 public class Combact {
     GameName game=new GameName();
-]
+
     public void showStat(String attackingPlayer, Soldier attacker, Soldier defender) {
         // Print winner
        // System.out.println("Winner: " + attackingPlayer);

@@ -290,7 +290,7 @@ public class Battle {
             challengerArmy = RemoveDeadSoldiers(challengerArmy);
             army2Size = challengerArmy.length;
 
-            showResult.showStat("lakruwan", "sachintha", accepterArmy[acceptorsIndex],challengerArmy[challengersIndex], 15, 10);
+            showResult.showStat(accepter.name, accepterArmy[acceptorsIndex],challengerArmy[challengersIndex]);
             challengerArmy = RemoveDeadSoldiers(challengerArmy);
             army2Size = challengerArmy.length;
 
