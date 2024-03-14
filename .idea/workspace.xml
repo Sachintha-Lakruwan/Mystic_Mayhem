@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="Challenge part interface done">
+    <list default="true" id="3de1d5f9-70e8-4530-806b-96130ec71868" name="Changes" comment="iwarai">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Battle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Battle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Combact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Combact.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameName.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -224,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710419314688</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="iwarai">
+      <option name="closed" value="true" />
+      <created>1710423007496</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1710423007497</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -308,6 +317,7 @@
     <MESSAGE value="color added" />
     <MESSAGE value="Blinking animations added" />
     <MESSAGE value="Challenge part interface done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Challenge part interface done" />
+    <MESSAGE value="iwarai" />
+    <option name="LAST_COMMIT_MESSAGE" value="iwarai" />
   </component>
 </project>

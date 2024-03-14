@@ -35,7 +35,7 @@ public class GameName {
         System.out.println();
     }
 
-    public static void blinkText(String text, int repeat, int durationMillis, String color) {
+    public  void blinkText(String text, int repeat, int durationMillis, String color) {
         try {
             for (int i = 0; i < repeat; i++) {
                 System.out.print(ANSI_BLINK + color + text + ANSI_RESET + "\r"); // Blinking text
@@ -66,8 +66,8 @@ public class GameName {
         //System.out.println( ANSI_LIGHT_BLUE+k);
 
         animatePrint(k,ANSI_BLUE);
-        //animatePrintSlow("................................LET'S Play...................................",ANSI_RED);
-blinkText(" ................................LET'S Play...................................",5,500,ANSI_RED);
+
+blinkText(" ................................LET'S Play...................................",3,500,ANSI_RED);
     }
 
 

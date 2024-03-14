@@ -1,5 +1,6 @@
 import java.sql.SQLOutput;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Interface extends GameName {
@@ -506,6 +507,37 @@ public class Interface extends GameName {
                 break;
         }
         return status;
+    }
+    public Player selectPlayer(){
+        Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
+
+        String[] troops1 = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
+        whiteWolf.createArmy(troops1);
+        Player code_x = new Player("GeraltofRivia", "whitewolf", 215, 32);
+
+        String[] troops2 = { "Zing", "Zoro", "Conjurer", "Saint", "Phoenix" };
+        code_x.createArmy(troops2);
+        animatePrintFast("Select Your Challenger??",ANSI_GREEN);
+        Player challenger=null;
+        System.out.println("-----------Player Details------------");
+        printArmy(whiteWolf);
+        printArmy(code_x);
+        System.out.println("Select a Player:");
+        System.out.println("1. WhiteWolf");
+        System.out.println("2. CODE-X");
+        System.out.println();
+        Scanner scanner=new Scanner(System.in);
+        int playerChoice = scanner.nextInt();
+        if (playerChoice == 1) {
+            challenger=whiteWolf;
+
+        } else if (playerChoice == 2) {
+            challenger=code_x;
+        } else {
+            System.out.println("Invalid choice!");
+        }
+        return challenger;
+
     }
 
 public static void main(String Args[]){

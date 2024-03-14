@@ -144,7 +144,7 @@ public class Battle {
 
     public void Desert(Player challenger, Player accepter) {
         // Apply modifiers for each soldier type
-        System.out.println("llllllllllllllllllllllllllllllllllllllllllllllll");
+
         applyModifiersDesert(challenger.army.archer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.knight, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersDesert(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
@@ -258,7 +258,7 @@ public class Battle {
             }
 
             turns++;
-            System.out.println(turns);
+            System.out.println("Turn no--"+turns);
             showResult.showStat(challenger.name, challengerArmy[challengersIndex], accepterArmy[acceptorsIndex]);
             //any key
             accepterArmy = RemoveDeadSoldiers(accepterArmy);
@@ -361,16 +361,5 @@ public class Battle {
         return result;
     }
 
-    public static void main(String[] args){
-        Player whiteWolf = new Player("GeraltofRivia", "whitewolf", 215, 32);
-        String[] troops = { "Zing", "Zoro", "Conjurer", "Saint", "Phoenix" };
-        whiteWolf.createArmy(troops);
 
-        Player player = new Player("jj", "hhh", 215, 32);
-        String[] troops1 = { "Ranger", "Squire", "Warlock", "Medic", "Dragon" };
-        player.createArmy(troops1);
-
-        Battle b = new Battle();
-        b.Challenge(whiteWolf, player, "HilCrest");
-    }
 }
