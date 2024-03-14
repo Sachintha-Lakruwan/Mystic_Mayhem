@@ -63,6 +63,9 @@ public class Battle {
         applyModifiersHilCrest(challenger.army.mage, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersHilCrest(challenger.army.healer, Highlanders, Marshlanders, Sunchildren, Mystics);
         applyModifiersHilCrest(challenger.army.mythical, Highlanders, Marshlanders, Sunchildren, Mystics);
+        //
+
+
         Fight(challenger, accepter, "HilCrest");
     }
 
